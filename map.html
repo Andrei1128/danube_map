@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Map</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #map {
+            height: 100%;
+            width: 100%;
+            border: none;
+        }
+
+        .map-controls {
+            z-index: 1000;
+            position: relative;
+            bottom: 4rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .control-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <div class="map-controls">
+        <button class="control-btn" onclick="changeMapStyle()">🗺️ Change Style</button>
+        <button class="control-btn" onclick="toggleGPS()">📍 GPS</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script>
+        const startCoords = [45.137734, 28.987073];
+        const endCoords = [45.043451, 29.184094];
+
+        const minLat = Math.min(startCoords[0], endCoords[0]);
+        const maxLat = Math.max(startCoords[0], endCoords[0]);
+        const minLng = Math.min(startCoords[1], endCoords[1]);
+        const maxLng = Math.max(startCoords[1], endCoords[1]);
+
+        const centerCoords = [minLat + maxLat / 2, minLng + maxLng / 2,]
+
+        const map = L.map('map', {
+            center: centerCoords,
+            zoom: 11,
+            maxBounds: [[minLat, minLng], [maxLat, maxLng]],
+            maxBoundsViscosity: 1,
+            minZoom: 11,
+            maxZoom: 18
+        });
+
+        let currentStyle = 0;
+        const mapStyles = [
+            {
+                name: 'OpenStreetMap',
+                url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                attribution: '© OpenStreetMap contributors'
+            },
+            {
+                name: 'Satellite',
+                url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+                attribution: 'Esri, DigitalGlobe, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community'
+            },
+            {
+                name: 'Terrain',
+                url: 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',
+                attribution: '© OpenTopoMap contributors'
+            }
+        ];
+
+        let currentTileLayer = L.tileLayer(mapStyles[0].url, {
+            attribution: mapStyles[0].attribution
+        }).addTo(map);
+
+        let gpsMarker = null;
+        let gpsCircle = null;
+        let watchId = null;
+        let gpsEnabled = false;
+        let markerColor = "#4285f4"
+
+        function fitToBounds() {
+            const bounds = L.latLngBounds([
+                [minLat, minLng],
+                [maxLat, maxLng]
+            ]);
+            map.fitBounds(bounds);
+        }
+
+        function changeMapStyle() {
+            currentStyle = (currentStyle + 1) % mapStyles.length;
+            map.removeLayer(currentTileLayer);
+            currentTileLayer = L.tileLayer(mapStyles[currentStyle].url, {
+                attribution: mapStyles[currentStyle].attribution
+            }).addTo(map);
+        }
+
+        function toggleGPS() {
+            if (gpsEnabled) {
+                stopGPS();
+            } else {
+                startGPS();
+            }
+        }
+
+        function startGPS() {
+            if (!navigator.geolocation) {
+                alert('GPS is not supported by this browser.');
+                return;
+            }
+
+            watchId = navigator.geolocation.watchPosition(
+                function (position) {
+                    const lat = position.coords.latitude;
+                    const lng = position.coords.longitude;
+                    const accuracy = position.coords.accuracy;
+
+                    if (gpsMarker) {
+                        gpsMarker.setLatLng([lat, lng]);
+                        gpsCircle.setLatLng([lat, lng]);
+                        gpsCircle.setRadius(accuracy);
+                    } else {
+                        gpsMarker = L.circleMarker([lat, lng], {
+                            color: markerColor,
+                            fillColor: markerColor,
+                            fillOpacity: 1,
+                            radius: 8,
+                            weight: 2
+                        }).addTo(map);
+
+                        gpsCircle = L.circle([lat, lng], {
+                            color: markerColor,
+                            fillColor: markerColor,
+                            fillOpacity: 0.2,
+                            radius: accuracy,
+                            weight: 1
+                        }).addTo(map);
+
+                        gpsMarker.bindPopup(`
+                            <div class="popup-title">📍 Your Location</div>
+                            <strong>Coordinates:</strong> ${lat.toFixed(6)}, ${lng.toFixed(6)}<br>
+                            <strong>Accuracy:</strong> ${accuracy.toFixed(0)}m
+                        `);
+                    }
+
+                    gpsEnabled = true;
+                },
+                function (error) {
+                    let errorMessage = 'Unable to retrieve your location.';
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            errorMessage = 'Location access denied by user.';
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            errorMessage = 'Location information unavailable.';
+                            break;
+                        case error.TIMEOUT:
+                            errorMessage = 'Location request timed out.';
+                            break;
+                    }
+                    alert(errorMessage);
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 60000
+                }
+            );
+        }
+
+        function stopGPS() {
+            if (watchId) {
+                navigator.geolocation.clearWatch(watchId);
+                watchId = null;
+            }
+
+            if (gpsMarker) {
+                map.removeLayer(gpsMarker);
+                map.removeLayer(gpsCircle);
+                gpsMarker = null;
+                gpsCircle = null;
+            }
+
+            gpsEnabled = false;
+        }
+
+        fitToBounds();
+
+        L.control.scale({
+            position: 'bottomright',
+            metric: true,
+            imperial: false
+        }).addTo(map);
+
+        map.on('click', function (e) {
+            L.popup()
+                .setLatLng(e.latlng)
+                .setContent(`
+                    <div class="popup-title">📍 Clicked Location</div>
+                    <strong>Coordinates:</strong> ${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}
+                `)
+                .openOn(map);
+        });
+    </script>
+</body>
+
+</html>

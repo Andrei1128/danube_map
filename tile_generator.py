@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
+import matplotlib.colors as colors
 import os
 from math import floor, ceil
 from scipy.interpolate import griddata
@@ -52,61 +53,6 @@ class BathymetryTiler:
         )
 
         return self.df[mask]
-        """Create a default SVG tile for areas with no data."""
-        min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y)
-
-        # Create empty figure with just a light blue background
-        fig = go.Figure()
-
-        # Add a light blue rectangle to indicate water with unknown depth
-        fig.add_shape(
-            type="rect",
-            x0=min_lon, y0=min_lat,
-            x1=max_lon, y1=max_lat,
-            fillcolor="lightblue",
-            opacity=0.3,
-            line=dict(width=0)
-        )
-
-        # Add text indicating no data
-        fig.add_annotation(
-            x=(min_lon + max_lon) / 2,
-            y=(min_lat + max_lat) / 2,
-            text="No Data",
-            showarrow=False,
-            font=dict(size=20, color="gray"),
-            opacity=0.5
-        )
-
-        # Update layout
-        fig.update_layout(
-            width=800,
-            height=800,
-            margin=dict(l=0, r=0, t=0, b=0),
-            xaxis=dict(
-                range=[min_lon, max_lon],
-                showgrid=False,
-                showticklabels=False,
-                zeroline=False
-            ),
-            yaxis=dict(
-                range=[min_lat, max_lat],
-                showgrid=False,
-                showticklabels=False,
-                zeroline=False,
-                scaleanchor="x",
-                scaleratio=1
-            ),
-            plot_bgcolor='#E6F3FF',  # Light blue background
-            paper_bgcolor='white',
-            showlegend=False
-        )
-
-        # Save as SVG
-        filename = os.path.join(self.output_dir, f'tile_{tile_x}_{tile_y}_default.svg')
-        fig.write_image(filename, format='svg', width=800, height=800)
-
-        return filename
 
     def create_tile_svg(self, tile_x, tile_y, resolution=800):
         tile_data = self.get_tile_data(tile_x, tile_y)
@@ -123,52 +69,65 @@ class BathymetryTiler:
         points = tile_data[['lon', 'lat']].values
         values = tile_data['bathymetry'].values
 
+        # Need at least 4 points for triangulation
+        if len(points) < 4:
+            return
+
         z_grid = griddata(points, values, (lon_mesh, lat_mesh), method='linear')
 
-        fig = go.Figure(data=go.Contour(
-            x=lon_grid,
-            y=lat_grid,
-            z=z_grid,
-            colorscale='Blues',
-            showscale=False,
-            line_smoothing=0.85,
-            line_width=1,
-            contours=dict(
-                showlabels = True,
-                start=0,
-                end=32,
-                size=1,
-                labelfont = dict(
-                    size = 12,
-                    color = 'black'
-                )
-            )
-        ))
+        # Keep NaN values for areas without data (for transparency)
+        # Only fill small gaps within the data area using nearest neighbor
+        nan_mask = np.isnan(z_grid)
+        if np.any(nan_mask) and np.any(~nan_mask):
+            # Use a conservative approach: only fill NaNs that are surrounded by valid data
+            from scipy.ndimage import binary_dilation
+            valid_mask = ~nan_mask
+            # Slightly expand the valid area to fill small interpolation gaps
+            expanded_valid = binary_dilation(valid_mask, iterations=2)
+            fill_mask = nan_mask & expanded_valid
 
-        fig.update_layout(
-            width=800,
-            height=800,
-            margin=dict(l=0, r=0, t=0, b=0),
-            xaxis=dict(
-                range=[min_lon, max_lon],
-                showgrid=False,
-                showticklabels=False,
-                zeroline=False
-            ),
-            yaxis=dict(
-                range=[min_lat, max_lat],
-                showgrid=False,
-                showticklabels=False,
-                zeroline=False,
-                scaleanchor="x",
-                scaleratio=1
-            ),
-            paper_bgcolor='rgba(0,0,0,0)',
-            plot_bgcolor='rgba(0,0,0,0)',
-        )
+            if np.any(fill_mask):
+                z_grid_nearest = griddata(points, values, (lon_mesh, lat_mesh), method='nearest')
+                z_grid[fill_mask] = z_grid_nearest[fill_mask]
 
-        filename = os.path.join(self.output_dir, f'tile_{tile_x}_{tile_y}.svg')
-        fig.write_image(filename, format='svg', width=800, height=800)
+        fig, ax = plt.subplots(figsize=(8, 8), dpi=100)
+
+        #Apply gaussian filter for smoothing
+        from scipy.ndimage import gaussian_filter
+        z_smoothed = gaussian_filter(z_grid, sigma=5.0)
+
+        # Create smooth filled contour plot with blue colormap
+        contour_levels = np.arange(0, 38, 1)
+        ax.contourf(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
+                   cmap='Blues', alpha=0.8, corner_mask=False)
+
+        # Add smooth contour lines with enhanced smoothing
+        cs_lines = ax.contour(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
+                             colors='black', linewidths=0.9, alpha=0.9,
+                             corner_mask=False, antialiased=True)
+
+        # Add labels to contour lines
+        ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
+
+        # Set aspect ratio and limits
+        ax.set_xlim(min_lon, max_lon)
+        ax.set_ylim(min_lat, max_lat)
+        ax.set_aspect('equal')
+
+        # Remove axes and margins
+        ax.set_xticks([])
+        ax.set_yticks([])
+        ax.axis('off')
+        fig.patch.set_alpha(0)
+        ax.patch.set_alpha(0)
+
+        plt.tight_layout(pad=0)
+
+        svg_filename = os.path.join(self.output_dir, f'tile_{tile_x}_{tile_y}.svg')
+
+        plt.savefig(svg_filename, format='svg', bbox_inches='tight', pad_inches=0,
+                   transparent=True, facecolor='none')
+        plt.close()
 
         print(f"Processed tile ({tile_x}, {tile_y})...")
 
@@ -184,4 +143,4 @@ if __name__ == "__main__":
         output_dir='bathymetry_tiles'
     )
 
-    metadata = tiler.generate_all_tiles(resolution=250)
+    metadata = tiler.generate_all_tiles(resolution=2500)

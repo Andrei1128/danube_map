@@ -258,9 +258,7 @@
             for (let tileX = minTileX; tileX <= maxTileX; tileX++) {
                 for (let tileY = minTileY; tileY <= maxTileY; tileY++) {
                     const [[minLat, minLng], [maxLat, maxLng]] = tileToLatLng(tileX, tileY);
-                    const centerLat = (minLat + maxLat) / 2;
-                    const centerLng = (minLng + maxLng) / 2;
-                    const tilePath = `bathymetry_tiles/tile_${centerLat.toFixed(6)}_${centerLng.toFixed(6)}.svg`;
+                    const tilePath = `bathymetry_tiles/tile_${minLat.toFixed(6)}_${minLng.toFixed(6)}_${maxLat.toFixed(6)}_${maxLng.toFixed(6)}.svg`;
 
                     const img = new Image();
                     img.onload = function () {

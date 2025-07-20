@@ -45,13 +45,13 @@ class BathymetryTiler:
         max_lon = (tile_x + 1) * self.tile_size
         min_lat = tile_y * self.tile_size
         max_lat = (tile_y + 1) * self.tile_size
-        
+
         if with_overlap:
             min_lon -= self.overlap_size
             max_lon += self.overlap_size
             min_lat -= self.overlap_size
             max_lat += self.overlap_size
-            
+
         return min_lon, max_lon, min_lat, max_lat
 
     def get_tile_data(self, tile_x, tile_y, with_overlap=True):
@@ -65,16 +65,23 @@ class BathymetryTiler:
         return self.df[mask]
 
     def create_tile_svg(self, tile_x, tile_y, resolution=800):
+        # Calculate aspect ratio correction for longitude at this latitude
+        min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y, with_overlap=False)
+        center_lat = (min_lat + max_lat) / 2
+        lon_correction = np.cos(np.radians(center_lat))
+
+        # Adjust resolution for longitude to maintain proper aspect ratio
+        resolution_lon = int(resolution * lon_correction)
+        resolution_lat = resolution
         tile_data = self.get_tile_data(tile_x, tile_y, with_overlap=True)
 
         if len(tile_data) == 0:
             return
 
         min_lon_overlap, max_lon_overlap, min_lat_overlap, max_lat_overlap = self.get_tile_bounds(tile_x, tile_y, with_overlap=True)
-        min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y, with_overlap=False)
 
-        lon_grid_overlap = np.linspace(min_lon_overlap, max_lon_overlap, int(resolution * (1 + 2 * self.overlap_factor)))
-        lat_grid_overlap = np.linspace(min_lat_overlap, max_lat_overlap, int(resolution * (1 + 2 * self.overlap_factor)))
+        lon_grid_overlap = np.linspace(min_lon_overlap, max_lon_overlap, int(resolution_lon * (1 + 2 * self.overlap_factor)))
+        lat_grid_overlap = np.linspace(min_lat_overlap, max_lat_overlap, int(resolution_lat * (1 + 2 * self.overlap_factor)))
         lon_mesh_overlap, lat_mesh_overlap = np.meshgrid(lon_grid_overlap, lat_grid_overlap)
 
         points = tile_data[['lon', 'lat']].values
@@ -105,21 +112,25 @@ class BathymetryTiler:
         # Apply gaussian filter for smoothing on the overlapped data
         from scipy.ndimage import gaussian_filter
         z_smoothed_overlap = gaussian_filter(z_grid_overlap, sigma=5.0)
-        
+
         # Now crop to exact tile boundaries
-        overlap_pixels = int(resolution * self.overlap_factor)
-        core_start_x = overlap_pixels
-        core_end_x = z_smoothed_overlap.shape[1] - overlap_pixels
-        core_start_y = overlap_pixels
-        core_end_y = z_smoothed_overlap.shape[0] - overlap_pixels
-        
+        overlap_pixels_lon = int(resolution_lon * self.overlap_factor)
+        overlap_pixels_lat = int(resolution_lat * self.overlap_factor)
+        core_start_x = overlap_pixels_lon
+        core_end_x = z_smoothed_overlap.shape[1] - overlap_pixels_lon
+        core_start_y = overlap_pixels_lat
+        core_end_y = z_smoothed_overlap.shape[0] - overlap_pixels_lat
+
         z_smoothed = z_smoothed_overlap[core_start_y:core_end_y, core_start_x:core_end_x]
 
-        fig, ax = plt.subplots(figsize=(8, 8), dpi=100)
+        # Calculate figure size to maintain proper aspect ratio
+        fig_width = 8
+        fig_height = fig_width / lon_correction
+        fig, ax = plt.subplots(figsize=(fig_width, fig_height), dpi=100)
 
-        # Create coordinate grids for the exact tile area
-        lon_grid = np.linspace(min_lon, max_lon, resolution)
-        lat_grid = np.linspace(min_lat, max_lat, resolution)
+        # Create coordinate grids for the exact tile area that match z_smoothed dimensions
+        lon_grid = np.linspace(min_lon, max_lon, z_smoothed.shape[1])
+        lat_grid = np.linspace(min_lat, max_lat, z_smoothed.shape[0])
         lon_mesh, lat_mesh = np.meshgrid(lon_grid, lat_grid)
 
         # Create smooth filled contour plot with blue colormap
@@ -138,7 +149,7 @@ class BathymetryTiler:
         # Set aspect ratio and limits
         ax.set_xlim(min_lon, max_lon)
         ax.set_ylim(min_lat, max_lat)
-        ax.set_aspect('equal')
+        ax.set_aspect(1.0/lon_correction)  # Correct aspect ratio for latitude
 
         # Remove axes and margins
         ax.set_xticks([])
@@ -149,9 +160,7 @@ class BathymetryTiler:
 
         plt.tight_layout(pad=0)
 
-        center_lat = (min_lat + max_lat) / 2
-        center_lon = (min_lon + max_lon) / 2
-        svg_filename = os.path.join(self.output_dir, f'tile_{center_lat:.6f}_{center_lon:.6f}.svg')
+        svg_filename = os.path.join(self.output_dir, f'tile_{min_lat:.6f}_{min_lon:.6f}_{max_lat:.6f}_{max_lon:.6f}.svg')
 
         plt.savefig(svg_filename, format='svg', bbox_inches='tight', pad_inches=0,
                    transparent=True, facecolor='none')
@@ -185,4 +194,4 @@ if __name__ == "__main__":
         output_dir='bathymetry_tiles'
     )
 
-    metadata = tiler.generate_all_tiles(resolution=1500, batch_size=25)
+    metadata = tiler.generate_all_tiles(resolution=2500, batch_size=10)

@@ -170,11 +170,12 @@ class BathymetryTiler:
         filename = os.path.join(self.output_dir, f'tile_{tile_x}_{tile_y}.svg')
         fig.write_image(filename, format='svg', width=800, height=800)
 
+        print(f"Processed tile ({tile_x}, {tile_y})...")
+
     def generate_all_tiles(self, resolution=800):
         for tile_x in range(self.tile_min_x, self.tile_max_x):
             for tile_y in range(self.tile_min_y, self.tile_max_y):
                 self.create_tile_svg(tile_x, tile_y, resolution)
-                print(f"Processed tile ({tile_x}, {tile_y})...", end='')
 
 if __name__ == "__main__":
     tiler = BathymetryTiler(

@@ -3,12 +3,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import os
+import gc
 from math import floor, ceil
 from scipy.interpolate import griddata
 
 class BathymetryTiler:
-    def __init__(self, csv_file, tile_size_deg=0.01, output_dir='tiles'):
+    def __init__(self, csv_file, tile_size_deg=0.01, output_dir='tiles', overlap_factor=0.1):
         self.tile_size = tile_size_deg
+        self.overlap_factor = overlap_factor
+        self.overlap_size = tile_size_deg * overlap_factor
         self.output_dir = output_dir
 
         os.makedirs(output_dir, exist_ok=True)
@@ -37,15 +40,22 @@ class BathymetryTiler:
 
         print(f"Tile grid: {self.n_tiles_x} x {self.n_tiles_y} = {self.n_tiles_x * self.n_tiles_y} tiles")
 
-    def get_tile_bounds(self, tile_x, tile_y):
+    def get_tile_bounds(self, tile_x, tile_y, with_overlap=False):
         min_lon = tile_x * self.tile_size
         max_lon = (tile_x + 1) * self.tile_size
         min_lat = tile_y * self.tile_size
         max_lat = (tile_y + 1) * self.tile_size
+        
+        if with_overlap:
+            min_lon -= self.overlap_size
+            max_lon += self.overlap_size
+            min_lat -= self.overlap_size
+            max_lat += self.overlap_size
+            
         return min_lon, max_lon, min_lat, max_lat
 
-    def get_tile_data(self, tile_x, tile_y):
-        min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y)
+    def get_tile_data(self, tile_x, tile_y, with_overlap=True):
+        min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y, with_overlap)
 
         mask = (
             (self.df['lon'] >= min_lon) & (self.df['lon'] < max_lon) &
@@ -55,16 +65,17 @@ class BathymetryTiler:
         return self.df[mask]
 
     def create_tile_svg(self, tile_x, tile_y, resolution=800):
-        tile_data = self.get_tile_data(tile_x, tile_y)
+        tile_data = self.get_tile_data(tile_x, tile_y, with_overlap=True)
 
         if len(tile_data) == 0:
             return
 
-        min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y)
+        min_lon_overlap, max_lon_overlap, min_lat_overlap, max_lat_overlap = self.get_tile_bounds(tile_x, tile_y, with_overlap=True)
+        min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y, with_overlap=False)
 
-        lon_grid = np.linspace(min_lon, max_lon, resolution)
-        lat_grid = np.linspace(min_lat, max_lat, resolution)
-        lon_mesh, lat_mesh = np.meshgrid(lon_grid, lat_grid)
+        lon_grid_overlap = np.linspace(min_lon_overlap, max_lon_overlap, int(resolution * (1 + 2 * self.overlap_factor)))
+        lat_grid_overlap = np.linspace(min_lat_overlap, max_lat_overlap, int(resolution * (1 + 2 * self.overlap_factor)))
+        lon_mesh_overlap, lat_mesh_overlap = np.meshgrid(lon_grid_overlap, lat_grid_overlap)
 
         points = tile_data[['lon', 'lat']].values
         values = tile_data['bathymetry'].values
@@ -73,11 +84,11 @@ class BathymetryTiler:
         if len(points) < 4:
             return
 
-        z_grid = griddata(points, values, (lon_mesh, lat_mesh), method='linear')
+        z_grid_overlap = griddata(points, values, (lon_mesh_overlap, lat_mesh_overlap), method='linear')
 
         # Keep NaN values for areas without data (for transparency)
         # Only fill small gaps within the data area using nearest neighbor
-        nan_mask = np.isnan(z_grid)
+        nan_mask = np.isnan(z_grid_overlap)
         if np.any(nan_mask) and np.any(~nan_mask):
             # Use a conservative approach: only fill NaNs that are surrounded by valid data
             from scipy.ndimage import binary_dilation
@@ -87,14 +98,29 @@ class BathymetryTiler:
             fill_mask = nan_mask & expanded_valid
 
             if np.any(fill_mask):
-                z_grid_nearest = griddata(points, values, (lon_mesh, lat_mesh), method='nearest')
-                z_grid[fill_mask] = z_grid_nearest[fill_mask]
+                z_grid_nearest = griddata(points, values, (lon_mesh_overlap, lat_mesh_overlap), method='nearest')
+                z_grid_overlap[fill_mask] = z_grid_nearest[fill_mask]
+                del z_grid_nearest
+
+        # Apply gaussian filter for smoothing on the overlapped data
+        from scipy.ndimage import gaussian_filter
+        z_smoothed_overlap = gaussian_filter(z_grid_overlap, sigma=5.0)
+        
+        # Now crop to exact tile boundaries
+        overlap_pixels = int(resolution * self.overlap_factor)
+        core_start_x = overlap_pixels
+        core_end_x = z_smoothed_overlap.shape[1] - overlap_pixels
+        core_start_y = overlap_pixels
+        core_end_y = z_smoothed_overlap.shape[0] - overlap_pixels
+        
+        z_smoothed = z_smoothed_overlap[core_start_y:core_end_y, core_start_x:core_end_x]
 
         fig, ax = plt.subplots(figsize=(8, 8), dpi=100)
 
-        #Apply gaussian filter for smoothing
-        from scipy.ndimage import gaussian_filter
-        z_smoothed = gaussian_filter(z_grid, sigma=5.0)
+        # Create coordinate grids for the exact tile area
+        lon_grid = np.linspace(min_lon, max_lon, resolution)
+        lat_grid = np.linspace(min_lat, max_lat, resolution)
+        lon_mesh, lat_mesh = np.meshgrid(lon_grid, lat_grid)
 
         # Create smooth filled contour plot with blue colormap
         contour_levels = np.arange(0, 38, 1)
@@ -123,18 +149,34 @@ class BathymetryTiler:
 
         plt.tight_layout(pad=0)
 
-        svg_filename = os.path.join(self.output_dir, f'tile_{tile_x}_{tile_y}.svg')
+        center_lat = (min_lat + max_lat) / 2
+        center_lon = (min_lon + max_lon) / 2
+        svg_filename = os.path.join(self.output_dir, f'tile_{center_lat:.6f}_{center_lon:.6f}.svg')
 
         plt.savefig(svg_filename, format='svg', bbox_inches='tight', pad_inches=0,
                    transparent=True, facecolor='none')
-        plt.close()
+        plt.close(fig)
 
-        print(f"Processed tile ({tile_x}, {tile_y})...")
+        # Explicit memory cleanup
+        del lon_mesh, lat_mesh, z_smoothed, z_smoothed_overlap, z_grid_overlap, lon_mesh_overlap, lat_mesh_overlap, points, values
+        del tile_data
+        gc.collect()
 
-    def generate_all_tiles(self, resolution=800):
+    def generate_all_tiles(self, resolution=800, batch_size=50):
+        total_tiles = (self.tile_max_x - self.tile_min_x) * (self.tile_max_y - self.tile_min_y)
+        processed = 0
+
         for tile_x in range(self.tile_min_x, self.tile_max_x):
             for tile_y in range(self.tile_min_y, self.tile_max_y):
                 self.create_tile_svg(tile_x, tile_y, resolution)
+                processed += 1
+
+                # Force garbage collection every batch_size tiles
+                if processed % batch_size == 0:
+                    gc.collect()
+                    print(f"Progress: {processed}/{total_tiles} tiles ({processed/total_tiles*100:.1f}%)")
+
+        print(f"Completed all {processed} tiles")
 
 if __name__ == "__main__":
     tiler = BathymetryTiler(
@@ -143,4 +185,4 @@ if __name__ == "__main__":
         output_dir='bathymetry_tiles'
     )
 
-    metadata = tiler.generate_all_tiles(resolution=2500)
+    metadata = tiler.generate_all_tiles(resolution=1500, batch_size=25)

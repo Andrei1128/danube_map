@@ -56,6 +56,7 @@
     <div class="map-controls">
         <button class="control-btn" onclick="changeMapStyle()">🗺️ Change Style</button>
         <button class="control-btn" onclick="toggleGPS()">📍 GPS</button>
+        <button class="control-btn" onclick="toggleBathymetry()">🌊 Bathymetry</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
@@ -73,7 +74,7 @@
         const map = L.map('map', {
             center: centerCoords,
             zoom: 11,
-            maxBounds: [[minLat, minLng], [maxLat, maxLng]],
+            // maxBounds: [[minLat, minLng], [maxLat, maxLng]],
             maxBoundsViscosity: 1,
             minZoom: 11,
             maxZoom: 18
@@ -107,6 +108,24 @@
         let watchId = null;
         let gpsEnabled = false;
         let markerColor = "#4285f4"
+        let bathymetryLayer = null;
+        let bathymetryEnabled = false;
+
+        const TILE_SIZE_DEG = 0.01;
+
+        function latLngToTile(lat, lng) {
+            const tileX = Math.floor(lng / TILE_SIZE_DEG);
+            const tileY = Math.floor(lat / TILE_SIZE_DEG);
+            return [tileX, tileY];
+        }
+
+        function tileToLatLng(tileX, tileY) {
+            const minLng = tileX * TILE_SIZE_DEG;
+            const maxLng = (tileX + 1) * TILE_SIZE_DEG;
+            const minLat = tileY * TILE_SIZE_DEG;
+            const maxLat = (tileY + 1) * TILE_SIZE_DEG;
+            return [[minLat, minLng], [maxLat, maxLng]];
+        }
 
         function fitToBounds() {
             const bounds = L.latLngBounds([
@@ -211,6 +230,54 @@
             }
 
             gpsEnabled = false;
+        }
+
+        function toggleBathymetry() {
+            if (bathymetryEnabled) {
+                if (bathymetryLayer) {
+                    map.removeLayer(bathymetryLayer);
+                    bathymetryLayer = null;
+                }
+                bathymetryEnabled = false;
+            } else {
+                loadBathymetryTiles();
+                bathymetryEnabled = true;
+            }
+        }
+
+        function loadBathymetryTiles() {
+            const bounds = map.getBounds();
+            const sw = bounds.getSouthWest();
+            const ne = bounds.getNorthEast();
+
+            const [minTileX, minTileY] = latLngToTile(sw.lat, sw.lng);
+            const [maxTileX, maxTileY] = latLngToTile(ne.lat, ne.lng);
+
+            bathymetryLayer = L.layerGroup();
+
+            for (let tileX = minTileX; tileX <= maxTileX; tileX++) {
+                for (let tileY = minTileY; tileY <= maxTileY; tileY++) {
+                    const [[minLat, minLng], [maxLat, maxLng]] = tileToLatLng(tileX, tileY);
+                    const centerLat = (minLat + maxLat) / 2;
+                    const centerLng = (minLng + maxLng) / 2;
+                    const tilePath = `bathymetry_tiles/tile_${centerLat.toFixed(6)}_${centerLng.toFixed(6)}.svg`;
+
+                    const img = new Image();
+                    img.onload = function () {
+                        const overlay = L.imageOverlay(tilePath, [[minLat, minLng], [maxLat, maxLng]], {
+                            opacity: 0.7,
+                            interactive: false
+                        });
+                        bathymetryLayer.addLayer(overlay);
+                    };
+                    img.onerror = function () {
+                        console.log(`Tile not found: ${tilePath}`);
+                    };
+                    img.src = tilePath;
+                }
+            }
+
+            bathymetryLayer.addTo(map);
         }
 
         fitToBounds();

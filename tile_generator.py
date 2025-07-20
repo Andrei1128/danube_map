@@ -4,11 +4,14 @@ import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 import os
 import gc
+import json
+import psutil
 from math import floor, ceil
 from scipy.interpolate import griddata
 
 class BathymetryTiler:
     def __init__(self, csv_file, tile_size_deg=0.01, output_dir='tiles', overlap_factor=0.1):
+        self.csv_file = csv_file
         self.tile_size = tile_size_deg
         self.overlap_factor = overlap_factor
         self.overlap_size = tile_size_deg * overlap_factor
@@ -16,19 +19,8 @@ class BathymetryTiler:
 
         os.makedirs(output_dir, exist_ok=True)
 
-        print("Loading data...")
-        self.df = pd.read_csv(csv_file)
-        print(f"Loaded {len(self.df)} points")
-
-        self.df = self.df[self.df['bathymetry'] >= 0]
-        print(f"Filtered to {len(self.df)} water points (removed land with negative depths)")
-
-        self.min_lat = self.df['lat'].min()
-        self.max_lat = self.df['lat'].max()
-        self.min_lon = self.df['lon'].min()
-        self.max_lon = self.df['lon'].max()
-
-        print(f"Bounds: Lat [{self.min_lat:.4f}, {self.max_lat:.4f}], Lon [{self.min_lon:.4f}, {self.max_lon:.4f}]")
+        print("Analyzing data bounds...")
+        self._calculate_bounds()
 
         self.tile_min_x = floor(self.min_lon / self.tile_size)
         self.tile_max_x = ceil(self.max_lon / self.tile_size)
@@ -39,6 +31,21 @@ class BathymetryTiler:
         self.n_tiles_y = self.tile_max_y - self.tile_min_y
 
         print(f"Tile grid: {self.n_tiles_x} x {self.n_tiles_y} = {self.n_tiles_x * self.n_tiles_y} tiles")
+
+    def _calculate_bounds(self):
+        data = pd.read_csv(self.csv_file)
+        data = data[data['bathymetry'] >= 0]
+
+        total_points = len(pd.read_csv(self.csv_file))
+        water_points = len(data)
+
+        self.min_lat = data['lat'].min()
+        self.max_lat = data['lat'].max()
+        self.min_lon = data['lon'].min()
+        self.max_lon = data['lon'].max()
+
+        print(f"Analyzed {water_points} water points from {total_points} total points")
+        print(f"Bounds: Lat [{self.min_lat:.4f}, {self.max_lat:.4f}], Lon [{self.min_lon:.4f}, {self.max_lon:.4f}]")
 
     def get_tile_bounds(self, tile_x, tile_y, with_overlap=False):
         min_lon = tile_x * self.tile_size
@@ -57,12 +64,15 @@ class BathymetryTiler:
     def get_tile_data(self, tile_x, tile_y, with_overlap=True):
         min_lon, max_lon, min_lat, max_lat = self.get_tile_bounds(tile_x, tile_y, with_overlap)
 
+        data = pd.read_csv(self.csv_file)
+        data = data[data['bathymetry'] >= 0]
+
         mask = (
-            (self.df['lon'] >= min_lon) & (self.df['lon'] < max_lon) &
-            (self.df['lat'] >= min_lat) & (self.df['lat'] < max_lat)
+            (data['lon'] >= min_lon) & (data['lon'] < max_lon) &
+            (data['lat'] >= min_lat) & (data['lat'] < max_lat)
         )
 
-        return self.df[mask]
+        return data[mask]
 
     def create_tile_svg(self, tile_x, tile_y, resolution=800):
         # Calculate aspect ratio correction for longitude at this latitude
@@ -134,7 +144,7 @@ class BathymetryTiler:
         lon_mesh, lat_mesh = np.meshgrid(lon_grid, lat_grid)
 
         # Create smooth filled contour plot with blue colormap
-        contour_levels = np.arange(0, 38, 1)
+        contour_levels = np.arange(0, 39, 1)
         ax.contourf(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
                    cmap='Blues', alpha=0.8, corner_mask=False)
 
@@ -166,26 +176,63 @@ class BathymetryTiler:
                    transparent=True, facecolor='none')
         plt.close(fig)
 
+        # Create metadata for this tile
+        tile_metadata = {
+            "filename": os.path.basename(svg_filename),
+            "coordinates": {
+                "min_lat": min_lat,
+                "max_lat": max_lat,
+                "min_lon": min_lon,
+                "max_lon": max_lon
+            }
+        }
+
         # Explicit memory cleanup
-        del lon_mesh, lat_mesh, z_smoothed, z_smoothed_overlap, z_grid_overlap, lon_mesh_overlap, lat_mesh_overlap, points, values
-        del tile_data
+        del (lon_mesh, lat_mesh, z_smoothed, z_smoothed_overlap, z_grid_overlap,
+             lon_mesh_overlap, lat_mesh_overlap, points, values, tile_data,
+             lon_grid_overlap, lat_grid_overlap, lon_grid, lat_grid)
+
+        # Clean up any matplotlib objects
+        plt.clf()
+        plt.cla()
         gc.collect()
+
+        return tile_metadata
+
+    def _get_memory_usage(self):
+        process = psutil.Process()
+        memory_info = process.memory_info()
+        return memory_info.rss / 1024 / 1024  # MB
 
     def generate_all_tiles(self, resolution=800, batch_size=50):
         total_tiles = (self.tile_max_x - self.tile_min_x) * (self.tile_max_y - self.tile_min_y)
         processed = 0
+        all_metadata = []
+
+        print(f"Starting tile generation. Initial memory usage: {self._get_memory_usage():.1f} MB")
 
         for tile_x in range(self.tile_min_x, self.tile_max_x):
             for tile_y in range(self.tile_min_y, self.tile_max_y):
-                self.create_tile_svg(tile_x, tile_y, resolution)
+                tile_metadata = self.create_tile_svg(tile_x, tile_y, resolution)
+                if tile_metadata:
+                    all_metadata.append(tile_metadata)
                 processed += 1
 
                 # Force garbage collection every batch_size tiles
                 if processed % batch_size == 0:
                     gc.collect()
-                    print(f"Progress: {processed}/{total_tiles} tiles ({processed/total_tiles*100:.1f}%)")
+                    memory_mb = self._get_memory_usage()
+                    print(f"Progress: {processed}/{total_tiles} tiles ({processed/total_tiles*100:.1f}%) - Memory: {memory_mb:.1f} MB")
 
-        print(f"Completed all {processed} tiles")
+        # Save all metadata to JSON file
+        metadata_file = os.path.join(self.output_dir, 'tiles_metadata.json')
+        with open(metadata_file, 'w') as f:
+            json.dump(all_metadata, f, indent=2)
+
+        final_memory = self._get_memory_usage()
+        print(f"Completed all {processed} tiles - Final memory usage: {final_memory:.1f} MB")
+        print(f"Metadata saved to {metadata_file}")
+        return all_metadata
 
 if __name__ == "__main__":
     tiler = BathymetryTiler(
@@ -194,4 +241,4 @@ if __name__ == "__main__":
         output_dir='bathymetry_tiles'
     )
 
-    metadata = tiler.generate_all_tiles(resolution=2500, batch_size=10)
+    metadata = tiler.generate_all_tiles(resolution=1000, batch_size=5)

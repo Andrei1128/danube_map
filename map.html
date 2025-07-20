@@ -110,6 +110,8 @@
         let markerColor = "#4285f4"
         let bathymetryLayer = null;
         let bathymetryEnabled = false;
+        let tilesMetadata = null;
+        let loadedTiles = new Set();
 
         const TILE_SIZE_DEG = 0.01;
 
@@ -232,50 +234,91 @@
             gpsEnabled = false;
         }
 
+        async function loadTilesMetadata() {
+            try {
+                const response = await fetch('bathymetry_tiles/tiles_metadata.json');
+                tilesMetadata = await response.json();
+                console.log(`Loaded metadata for ${tilesMetadata.length} tiles`);
+            } catch (error) {
+                console.error('Failed to load tiles metadata:', error);
+                tilesMetadata = [];
+            }
+        }
+
         function toggleBathymetry() {
             if (bathymetryEnabled) {
                 if (bathymetryLayer) {
                     map.removeLayer(bathymetryLayer);
                     bathymetryLayer = null;
                 }
+                loadedTiles.clear();
                 bathymetryEnabled = false;
             } else {
-                loadBathymetryTiles();
-                bathymetryEnabled = true;
+                if (!tilesMetadata) {
+                    loadTilesMetadata().then(() => {
+                        loadBathymetryTiles();
+                        bathymetryEnabled = true;
+                    });
+                } else {
+                    loadBathymetryTiles();
+                    bathymetryEnabled = true;
+                }
             }
         }
 
         function loadBathymetryTiles() {
+            if (!tilesMetadata || tilesMetadata.length === 0) {
+                console.warn('No tiles metadata available');
+                return;
+            }
+
             const bounds = map.getBounds();
             const sw = bounds.getSouthWest();
             const ne = bounds.getNorthEast();
 
-            const [minTileX, minTileY] = latLngToTile(sw.lat, sw.lng);
-            const [maxTileX, maxTileY] = latLngToTile(ne.lat, ne.lng);
+            if (!bathymetryLayer) {
+                bathymetryLayer = L.layerGroup().addTo(map);
+            }
 
-            bathymetryLayer = L.layerGroup();
+            // Filter tiles that intersect with current view
+            const visibleTiles = tilesMetadata.filter(tile => {
+                const coords = tile.coordinates;
+                return !(coords.max_lat < sw.lat || 
+                        coords.min_lat > ne.lat || 
+                        coords.max_lon < sw.lng || 
+                        coords.min_lon > ne.lng);
+            });
 
-            for (let tileX = minTileX; tileX <= maxTileX; tileX++) {
-                for (let tileY = minTileY; tileY <= maxTileY; tileY++) {
-                    const [[minLat, minLng], [maxLat, maxLng]] = tileToLatLng(tileX, tileY);
-                    const tilePath = `bathymetry_tiles/tile_${minLat.toFixed(6)}_${minLng.toFixed(6)}_${maxLat.toFixed(6)}_${maxLng.toFixed(6)}.svg`;
+            console.log(`Loading ${visibleTiles.length} tiles in view (out of ${tilesMetadata.length} total)`);
 
-                    const img = new Image();
-                    img.onload = function () {
-                        const overlay = L.imageOverlay(tilePath, [[minLat, minLng], [maxLat, maxLng]], {
+            visibleTiles.forEach(tile => {
+                const tileKey = tile.filename;
+                
+                // Skip if already loaded
+                if (loadedTiles.has(tileKey)) {
+                    return;
+                }
+
+                const coords = tile.coordinates;
+                const tilePath = `bathymetry_tiles/${tile.filename}`;
+
+                const img = new Image();
+                img.onload = function () {
+                    if (bathymetryEnabled) { // Only add if bathymetry is still enabled
+                        const overlay = L.imageOverlay(tilePath, 
+                            [[coords.min_lat, coords.min_lon], [coords.max_lat, coords.max_lon]], {
                             opacity: 0.7,
                             interactive: false
                         });
                         bathymetryLayer.addLayer(overlay);
-                    };
-                    img.onerror = function () {
-                        console.log(`Tile not found: ${tilePath}`);
-                    };
-                    img.src = tilePath;
-                }
-            }
-
-            bathymetryLayer.addTo(map);
+                        loadedTiles.add(tileKey);
+                    }
+                };
+                img.onerror = function () {
+                    console.log(`Tile not found: ${tilePath}`);
+                };
+                img.src = tilePath;
+            });
         }
 
         fitToBounds();
@@ -285,6 +328,13 @@
             metric: true,
             imperial: false
         }).addTo(map);
+
+        // Add event listeners for dynamic tile loading
+        map.on('moveend zoomend', function() {
+            if (bathymetryEnabled) {
+                loadBathymetryTiles();
+            }
+        });
 
         map.on('click', function (e) {
             L.popup()

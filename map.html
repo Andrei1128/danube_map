@@ -61,8 +61,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
     <script>
-        const startCoords = [45.137734, 28.987073];
-        const endCoords = [45.043451, 29.184094];
+        const startCoords = [45.48964671659176, 28.453525086616327];
+        const endCoords = [44.87774676946913, 29.779022798401925];
 
         const minLat = Math.min(startCoords[0], endCoords[0]);
         const maxLat = Math.max(startCoords[0], endCoords[0]);
@@ -73,8 +73,7 @@
 
         const map = L.map('map', {
             center: centerCoords,
-            zoom: 11,
-            // maxBounds: [[minLat, minLng], [maxLat, maxLng]],
+            maxBounds: [[minLat, minLng], [maxLat, maxLng]],
             maxBoundsViscosity: 1,
             minZoom: 11,
             maxZoom: 18
@@ -283,17 +282,17 @@
             // Filter tiles that intersect with current view
             const visibleTiles = tilesMetadata.filter(tile => {
                 const coords = tile.coordinates;
-                return !(coords.max_lat < sw.lat || 
-                        coords.min_lat > ne.lat || 
-                        coords.max_lon < sw.lng || 
-                        coords.min_lon > ne.lng);
+                return !(coords.max_lat < sw.lat ||
+                    coords.min_lat > ne.lat ||
+                    coords.max_lon < sw.lng ||
+                    coords.min_lon > ne.lng);
             });
 
             console.log(`Loading ${visibleTiles.length} tiles in view (out of ${tilesMetadata.length} total)`);
 
             visibleTiles.forEach(tile => {
                 const tileKey = tile.filename;
-                
+
                 // Skip if already loaded
                 if (loadedTiles.has(tileKey)) {
                     return;
@@ -305,7 +304,7 @@
                 const img = new Image();
                 img.onload = function () {
                     if (bathymetryEnabled) { // Only add if bathymetry is still enabled
-                        const overlay = L.imageOverlay(tilePath, 
+                        const overlay = L.imageOverlay(tilePath,
                             [[coords.min_lat, coords.min_lon], [coords.max_lat, coords.max_lon]], {
                             opacity: 0.7,
                             interactive: false
@@ -330,7 +329,7 @@
         }).addTo(map);
 
         // Add event listeners for dynamic tile loading
-        map.on('moveend zoomend', function() {
+        map.on('moveend zoomend', function () {
             if (bathymetryEnabled) {
                 loadBathymetryTiles();
             }

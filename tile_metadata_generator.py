@@ -2,6 +2,7 @@
 import os
 import json
 import glob
+from pathlib import Path
 import re
 
 def extract_coordinates_from_filename(filename):
@@ -28,33 +29,33 @@ def extract_coordinates_from_filename(filename):
 
 def main():
     bathymetry_tiles_dir = "bathymetry_tiles"
-    output_file = "svg_coordinates.json"
+    output_file = "tiles_metadata.json"
 
     if not os.path.exists(bathymetry_tiles_dir):
         print(f"Error: Directory '{bathymetry_tiles_dir}' not found")
         return
 
-    svg_files = glob.glob(os.path.join(bathymetry_tiles_dir, "*.svg"))
+    files = glob.glob(os.path.join(bathymetry_tiles_dir, "*.svg"))
 
-    if not svg_files:
+    if not files:
         print(f"No SVG files found in '{bathymetry_tiles_dir}'")
         return
 
     coordinates_data = []
 
-    for svg_path in svg_files:
-        svg_filename = os.path.basename(svg_path)
-        coordinates = extract_coordinates_from_filename(svg_filename)
+    for path in files:
+        filename = os.path.basename(path)
+        coordinates = extract_coordinates_from_filename(filename)
 
         if coordinates:
             coordinates_data.append({
-                "filename": svg_filename,
+                "filename": filename,
                 "coordinates": coordinates
             })
         else:
-            print(f"Warning: Could not extract coordinates from filename: {svg_filename}")
+            print(f"Warning: Could not extract coordinates from filename: {filename}")
 
-    with open(output_file, 'w') as f:
+    with open(Path(bathymetry_tiles_dir) / output_file, 'w') as f:
         json.dump(coordinates_data, f, indent=2)
 
     print(f"Successfully extracted coordinates from {len(coordinates_data)} SVG files")

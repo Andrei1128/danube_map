@@ -1,0 +1,20 @@
+{
+  "tile_size_deg": 0.01,
+  "overlap_factor": 0.1,
+  "resolution": 1500,
+  "batch_size": 5,
+  "smoothing_sigma": 6.5,
+  "contour_max_depth": 39.0,
+  "contour_step": 1.0,
+  "fig_width": 8.0,
+  "fig_dpi": 100,
+  "tile_opacity": 0.9,
+  "contour_opacity": 0.9,
+  "use_custom_bounds": false,
+  "min_lat": null,
+  "max_lat": null,
+  "min_lon": null,
+  "max_lon": null,
+  "csv_file": "/home/andrei/Repositories/danube_map/bathymetry_Danube.csv",
+  "output_dir": "/home/andrei/Repositories/danube_map/bathymetry_tiles"
+}

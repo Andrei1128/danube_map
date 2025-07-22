@@ -29,7 +29,6 @@ class TilerConfig:
     def overlap_size(self) -> float:
         return self.tile_size_deg * self.overlap_factor
 
-
 @dataclass
 class DataBounds:
     """Data bounds container."""
@@ -39,7 +38,6 @@ class DataBounds:
     max_lon: float
     total_points: int
     water_points: int
-
 
 class DataLoader:
     """Handles loading and filtering bathymetry data."""
@@ -65,9 +63,6 @@ class DataLoader:
             water_points=water_points
         )
 
-        print(f"Analyzed {water_points} water points from {total_points} total points")
-        print(f"Bounds: Lat [{bounds.min_lat:.4f}, {bounds.max_lat:.4f}], Lon [{bounds.min_lon:.4f}, {bounds.max_lon:.4f}]")
-
         return bounds
 
     def load_tile_data(self, min_lon: float, max_lon: float, min_lat: float, max_lat: float) -> pd.DataFrame:
@@ -81,7 +76,6 @@ class DataLoader:
 
         return data[mask]
 
-
 class BathymetryTiler:
     """Generates SVG tiles from bathymetry data."""
 
@@ -94,24 +88,19 @@ class BathymetryTiler:
 
         self.output_dir.mkdir(exist_ok=True)
 
-        print("Analyzing data bounds...")
         self.bounds = self.data_loader.calculate_bounds()
 
         # Use custom bounds if provided, otherwise use data bounds
         if min_lat is not None:
-            print(f"  min_lat: {min_lat:.4f}")
             self.bounds.min_lat = min_lat
 
         if max_lat is not None:
-            print(f"  max_lat: {max_lat:.4f}")
             self.bounds.max_lat = max_lat
 
         if min_lon is not None:
-            print(f"  min_lon: {min_lon:.4f}")
             self.bounds.min_lon = min_lon
 
         if max_lon is not None:
-            print(f"  max_lon: {max_lon:.4f}")
             self.bounds.max_lon = max_lon
 
         self.tile_min_x = floor(self.bounds.min_lon / self.config.tile_size_deg)
@@ -121,9 +110,6 @@ class BathymetryTiler:
 
         self.n_tiles_x = self.tile_max_x - self.tile_min_x
         self.n_tiles_y = self.tile_max_y - self.tile_min_y
-
-        print(f"Tile grid: {self.n_tiles_x} x {self.n_tiles_y} = {self.n_tiles_x * self.n_tiles_y} tiles")
-
 
     def get_tile_bounds(self, tile_x: int, tile_y: int, with_overlap: bool = False) -> Tuple[float, float, float, float]:
         """Get the bounds of a tile."""
@@ -181,8 +167,8 @@ class BathymetryTiler:
         z_smoothed = gaussian_filter(z_grid, sigma=self.config.smoothing_sigma)
 
         # Crop to exact tile boundaries
-        overlap_pixels_lon = int(resolution_lon * self.config.overlap_factor) - 2
-        overlap_pixels_lat = int(resolution_lat * self.config.overlap_factor) - 2
+        overlap_pixels_lon = int(resolution_lon * self.config.overlap_factor)
+        overlap_pixels_lat = int(resolution_lat * self.config.overlap_factor)
 
         core_start_x = overlap_pixels_lon
         core_end_x = z_smoothed.shape[1] - overlap_pixels_lon
@@ -292,10 +278,11 @@ class BathymetryTiler:
             return tile_metadata
 
         except Exception as e:
-            print(f"Error creating tile {tile_x}, {tile_y}: {e}")
             return None
 
-    def generate_all_tiles(self, resolution: Optional[int] = None, batch_size: Optional[int] = None) -> List[Dict[str, Any]]:
+    def generate_all_tiles(self, resolution: Optional[int] = None, batch_size: Optional[int] = None,
+                          progress_callback: Optional[callable] = None,
+                          should_stop_callback: Optional[callable] = None) -> List[Dict[str, Any]]:
         """Generate all tiles and return metadata."""
         if resolution is None:
             resolution = self.config.resolution
@@ -306,42 +293,39 @@ class BathymetryTiler:
         processed = 0
         all_metadata = []
 
-        print("Starting tile generation.")
+        if progress_callback:
+            progress_callback(0, total_tiles, "Starting tile generation...")
 
         for tile_x in range(self.tile_min_x, self.tile_max_x):
             for tile_y in range(self.tile_min_y, self.tile_max_y):
+                # Check if we should stop
+                if should_stop_callback and should_stop_callback():
+                    break
+
                 tile_metadata = self.create_tile_svg(tile_x, tile_y, resolution)
                 if tile_metadata:
                     all_metadata.append(tile_metadata)
                 processed += 1
 
+                # Report progress
+                if progress_callback:
+                    progress_callback(processed, total_tiles, f"Generated tile {processed}/{total_tiles}")
+
                 # Force garbage collection every batch_size tiles
                 if processed % batch_size == 0:
                     gc.collect()
-                    print(f"Progress: {processed}/{total_tiles} tiles ({processed/total_tiles*100:.1f}%)")
+
+            # Check if we should stop (outer loop break)
+            if should_stop_callback and should_stop_callback():
+                break
 
         # Save all metadata to JSON file
         metadata_file = self.output_dir / 'tiles_metadata.json'
         with open(metadata_file, 'w') as f:
             json.dump(all_metadata, f, indent=2)
 
-        print(f"Completed all {processed} tiles")
-        print(f"Metadata saved to {metadata_file}")
+
+        if progress_callback:
+            progress_callback(total_tiles, total_tiles, f"Completed all {processed} tiles")
 
         return all_metadata
-
-if __name__ == "__main__":
-    config = TilerConfig(
-        tile_size_deg=0.01,
-        resolution=1500,
-        batch_size=5,
-        moothing_sigma= 6.5
-    )
-
-    tiler = BathymetryTiler(
-        csv_file='bathymetry_Danube.csv',
-        output_dir='bathymetry_tiles',
-        config=config,
-    )
-
-    tiler.generate_all_tiles()

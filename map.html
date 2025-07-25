@@ -235,7 +235,7 @@
 
         async function loadTilesMetadata() {
             try {
-                const response = await fetch('bathymetry_tiles/tiles_metadata.json');
+                const response = await fetch('bathymetry_tiles_low_res/tiles_metadata.json');
                 tilesMetadata = await response.json();
                 console.log(`Loaded metadata for ${tilesMetadata.length} tiles`);
             } catch (error) {
@@ -299,7 +299,7 @@
                 }
 
                 const coords = tile.coordinates;
-                const tilePath = `bathymetry_tiles/${tile.filename}`;
+                const tilePath = `bathymetry_tiles_low_res/${tile.filename}`;
 
                 const img = new Image();
                 img.onload = function () {

@@ -27,6 +27,10 @@ class TileGeneratorGUI:
         self.fig_dpi = tk.IntVar(value=100)
         self.tile_opacity = tk.DoubleVar(value=0.9)
         self.contour_opacity = tk.DoubleVar(value=0.9)
+        
+        # Optimization parameters
+        self.n_workers = tk.IntVar(value=0)  # 0 = auto-detect
+        self.use_parallel = tk.BooleanVar(value=True)
 
         # Optional bounds
         self.use_custom_bounds = tk.BooleanVar()
@@ -59,6 +63,10 @@ class TileGeneratorGUI:
         # Configuration section
         config_frame = ttk.LabelFrame(main_frame, text="Configuration", padding="10")
         config_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
+        
+        # Expand main_frame to have 3 columns
+        main_frame.columnconfigure(1, weight=1)
+        main_frame.columnconfigure(2, weight=0)
 
         # Left column
         left_config = ttk.Frame(config_frame)
@@ -100,10 +108,20 @@ class TileGeneratorGUI:
 
         ttk.Label(right_config, text="Contour Opacity:").grid(row=5, column=0, sticky=tk.W, pady=(5, 0))
         ttk.Entry(right_config, textvariable=self.contour_opacity, width=15).grid(row=5, column=1, padx=(10, 0), pady=(5, 0))
+        
+        # Optimization section
+        optimization_frame = ttk.LabelFrame(main_frame, text="Performance Optimization", padding="10")
+        optimization_frame.grid(row=1, column=2, sticky=(tk.W, tk.E, tk.N), padx=(10, 0), pady=(0, 10))
+        
+        ttk.Label(optimization_frame, text="Workers (0=auto):").grid(row=0, column=0, sticky=tk.W)
+        ttk.Entry(optimization_frame, textvariable=self.n_workers, width=15).grid(row=0, column=1, padx=(10, 0))
+        
+        ttk.Checkbutton(optimization_frame, text="Use parallel processing", 
+                       variable=self.use_parallel).grid(row=1, column=0, columnspan=2, sticky=tk.W, pady=(5, 0))
 
         # Custom bounds section
         bounds_frame = ttk.LabelFrame(main_frame, text="Custom Bounds (Optional)", padding="10")
-        bounds_frame.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
+        bounds_frame.grid(row=2, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 10))
 
         ttk.Checkbutton(bounds_frame, text="Use custom bounds", variable=self.use_custom_bounds,
                        command=self.toggle_bounds).grid(row=0, column=0, columnspan=4, sticky=tk.W)
@@ -132,7 +150,7 @@ class TileGeneratorGUI:
 
         # Control section
         control_frame = ttk.Frame(main_frame)
-        control_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
+        control_frame.grid(row=3, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 10))
 
         self.generate_btn = ttk.Button(control_frame, text="Generate Tiles", command=self.start_generation)
         self.generate_btn.pack(side=tk.LEFT, padx=(0, 10))
@@ -145,7 +163,7 @@ class TileGeneratorGUI:
 
         # Progress section
         progress_frame = ttk.LabelFrame(main_frame, text="Progress", padding="10")
-        progress_frame.grid(row=4, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
+        progress_frame.grid(row=4, column=0, columnspan=3, sticky=(tk.W, tk.E), pady=(0, 10))
 
         self.progress_var = tk.StringVar(value="Ready")
         ttk.Label(progress_frame, textvariable=self.progress_var).pack(anchor=tk.W)
@@ -155,7 +173,7 @@ class TileGeneratorGUI:
 
         # Log section
         log_frame = ttk.LabelFrame(main_frame, text="Log", padding="10")
-        log_frame.grid(row=5, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S))
+        log_frame.grid(row=5, column=0, columnspan=3, sticky=(tk.W, tk.E, tk.N, tk.S))
 
         self.log_text = tk.Text(log_frame, height=10, wrap=tk.WORD)
         scrollbar = ttk.Scrollbar(log_frame, orient=tk.VERTICAL, command=self.log_text.yview)
@@ -217,6 +235,7 @@ class TileGeneratorGUI:
             self.stop_btn.configure(state='disabled')
 
     def create_config(self):
+        n_workers = self.n_workers.get() if self.n_workers.get() > 0 else None
         return TilerConfig(
             tile_size_deg=self.tile_size.get(),
             overlap_factor=self.overlap_factor.get(),
@@ -228,7 +247,8 @@ class TileGeneratorGUI:
             fig_width=self.fig_width.get(),
             fig_dpi=self.fig_dpi.get(),
             tile_opacity=self.tile_opacity.get(),
-            contour_opacity=self.contour_opacity.get()
+            contour_opacity=self.contour_opacity.get(),
+            n_workers=n_workers
         )
 
     def save_config(self):
@@ -250,6 +270,8 @@ class TileGeneratorGUI:
                 'fig_dpi': self.fig_dpi.get(),
                 'tile_opacity': self.tile_opacity.get(),
                 'contour_opacity': self.contour_opacity.get(),
+                'n_workers': self.n_workers.get(),
+                'use_parallel': self.use_parallel.get(),
                 'use_custom_bounds': self.use_custom_bounds.get(),
                 'min_lat': self.min_lat.get() if self.use_custom_bounds.get() else None,
                 'max_lat': self.max_lat.get() if self.use_custom_bounds.get() else None,
@@ -288,6 +310,8 @@ class TileGeneratorGUI:
                 self.fig_dpi.set(config_data.get('fig_dpi', 100))
                 self.tile_opacity.set(config_data.get('tile_opacity', 0.9))
                 self.contour_opacity.set(config_data.get('contour_opacity', 0.9))
+                self.n_workers.set(config_data.get('n_workers', 0))
+                self.use_parallel.set(config_data.get('use_parallel', True))
 
                 self.use_custom_bounds.set(config_data.get('use_custom_bounds', False))
                 if config_data.get('min_lat') is not None:
@@ -358,7 +382,8 @@ class TileGeneratorGUI:
 
             metadata = tiler.generate_all_tiles(
                 progress_callback=self.progress_callback,
-                should_stop_callback=self.should_stop_generation
+                should_stop_callback=self.should_stop_generation,
+                use_parallel=self.use_parallel.get()
             )
 
             if self.stop_generation:

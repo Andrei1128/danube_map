@@ -5,11 +5,17 @@ from math import ceil, floor
 from pathlib import Path
 from types import SimpleNamespace
 from typing import Optional, Tuple, List, Dict, Any
+import matplotlib
+matplotlib.use('Agg')  # Use non-interactive backend for thread safety
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from scipy.interpolate import griddata
 from scipy.ndimage import binary_dilation, gaussian_filter
+from concurrent.futures import ThreadPoolExecutor, as_completed
+import multiprocessing as mp
+from functools import lru_cache
+from scipy.spatial import cKDTree
 
 @dataclass
 class TilerConfig:
@@ -18,12 +24,13 @@ class TilerConfig:
     overlap_factor: float = 0.1
     resolution: int = 1000
     batch_size: int = 10
+    n_workers: int = None  # None = auto-detect CPU count
     smoothing_sigma: float = 5
     contour_max_depth: float = 40.0
     contour_step: float = 1.0
     fig_width: float = 8.0
-    fig_dpi: int = 100,
-    tile_opacity: float = 0.9,
+    fig_dpi: int = 100
+    tile_opacity: float = 0.9
     contour_opacity: float = 0.9
 
     @property
@@ -47,35 +54,78 @@ class DataLoader:
         self.csv_file = Path(csv_file)
         if not self.csv_file.exists():
             raise FileNotFoundError(f"CSV file not found: {csv_file}")
+        self._data = None
+        self._bounds = None
+        self._spatial_index = None
+
+    def _load_data(self) -> pd.DataFrame:
+        """Load data once and cache it."""
+        if self._data is None:
+            self._data = pd.read_csv(self.csv_file)
+            # Build spatial index for faster queries
+            self._build_spatial_index()
+        return self._data
+    
+    def _build_spatial_index(self) -> None:
+        """Build spatial index for faster tile queries."""
+        if self._data is not None and self._spatial_index is None:
+            points = self._data[['lon', 'lat']].values
+            self._spatial_index = cKDTree(points)
 
     def calculate_bounds(self) -> DataBounds:
         """Calculate data bounds and statistics."""
-        data = pd.read_csv(self.csv_file)
+        if self._bounds is None:
+            data = self._load_data()
+            
+            self._bounds = DataBounds(
+                min_lat=data['lat'].min(),
+                max_lat=data['lat'].max(),
+                min_lon=data['lon'].min(),
+                max_lon=data['lon'].max(),
+                total_points=len(data),
+                water_points=len(data)
+            )
 
-        total_points = len(pd.read_csv(self.csv_file))
-        water_points = len(data)
-
-        bounds = DataBounds(
-            min_lat=data['lat'].min(),
-            max_lat=data['lat'].max(),
-            min_lon=data['lon'].min(),
-            max_lon=data['lon'].max(),
-            total_points=total_points,
-            water_points=water_points
-        )
-
-        return bounds
+        return self._bounds
 
     def load_tile_data(self, min_lon: float, max_lon: float, min_lat: float, max_lat: float) -> pd.DataFrame:
         """Load data for a specific tile area."""
-        data = pd.read_csv(self.csv_file)
+        data = self._load_data()
 
-        mask = (
-            (data['lon'] >= min_lon) & (data['lon'] < max_lon) &
-            (data['lat'] >= min_lat) & (data['lat'] < max_lat)
-        )
+        # For large datasets, use spatial index for faster queries
+        if len(data) > 100000 and self._spatial_index is not None:
+            # Use spatial index to find points in bounding box
+            # Create corners of bounding box
+            bbox_corners = np.array([
+                [min_lon, min_lat],
+                [max_lon, min_lat], 
+                [max_lon, max_lat],
+                [min_lon, max_lat]
+            ])
+            
+            # Find all points within a reasonable distance of bbox
+            center = np.array([(min_lon + max_lon) / 2, (min_lat + max_lat) / 2])
+            diagonal = np.sqrt((max_lon - min_lon)**2 + (max_lat - min_lat)**2)
+            
+            # Query spatial index
+            indices = self._spatial_index.query_ball_point(center, diagonal)
+            candidate_data = data.iloc[indices]
+            
+            # Apply exact bounding box filter on candidates
+            mask = (
+                (candidate_data['lon'] >= min_lon) & (candidate_data['lon'] < max_lon) &
+                (candidate_data['lat'] >= min_lat) & (candidate_data['lat'] < max_lat)
+            )
+            
+            return candidate_data[mask].copy()
+        else:
+            # For smaller datasets, use direct filtering
+            mask = (
+                (data['lon'] >= min_lon) & (data['lon'] < max_lon) &
+                (data['lat'] >= min_lat) & (data['lat'] < max_lat)
+            )
 
-        return data[mask]
+            return data[mask].copy()
 
 class BathymetryTiler:
     """Generates SVG tiles from bathymetry data."""
@@ -111,6 +161,10 @@ class BathymetryTiler:
 
         self.n_tiles_x = self.tile_max_x - self.tile_min_x
         self.n_tiles_y = self.tile_max_y - self.tile_min_y
+        
+        # Set number of workers
+        if self.config.n_workers is None:
+            self.config.n_workers = min(mp.cpu_count(), 8)  # Cap at 8 to avoid memory issues
 
     def get_tile_bounds(self, tile_x: int, tile_y: int, with_overlap: bool = False) -> Tuple[float, float, float, float]:
         """Get the bounds of a tile."""
@@ -148,6 +202,14 @@ class BathymetryTiler:
         if len(points) < 4:
             raise ValueError("Need at least 4 points for triangulation")
 
+        # Remove any NaN or infinite values from input data
+        valid_indices = np.isfinite(values) & np.isfinite(points[:, 0]) & np.isfinite(points[:, 1])
+        points = points[valid_indices]
+        values = values[valid_indices]
+        
+        if len(points) < 4:
+            raise ValueError("Not enough valid points after filtering NaN/infinite values")
+
         z_grid = griddata(points, values, (lon_mesh, lat_mesh), method='linear')
 
         # Fill small gaps using conservative approach
@@ -160,7 +222,13 @@ class BathymetryTiler:
             if np.any(fill_mask):
                 z_grid_nearest = griddata(points, values, (lon_mesh, lat_mesh), method='nearest')
                 z_grid[fill_mask] = z_grid_nearest[fill_mask]
+                del z_grid_nearest  # Immediate cleanup
 
+        # Replace any remaining NaN values with 0 (water surface)
+        z_grid = np.nan_to_num(z_grid, nan=0.0, posinf=0.0, neginf=0.0)
+
+        # Cleanup input arrays
+        del points, values
         return z_grid
 
     def _smooth_and_crop(self, z_grid: np.ndarray, resolution_lon: int, resolution_lat: int) -> np.ndarray:
@@ -178,26 +246,39 @@ class BathymetryTiler:
 
         return z_smoothed[core_start_y:core_end_y, core_start_x:core_end_x]
 
-    def _create_plot(self, z_smoothed: np.ndarray, min_lon: float, max_lon: float, min_lat: float, max_lat: float, lon_correction: float) -> Tuple[plt.Figure, plt.Axes]:
+    def _create_plot(self, z_smoothed: np.ndarray, min_lon: float, max_lon: float, min_lat: float, max_lat: float, lon_correction: float) -> plt.Figure:
         """Create the matplotlib plot for the tile."""
         fig_height = self.config.fig_width / lon_correction
         fig, ax = plt.subplots(figsize=(self.config.fig_width, fig_height), dpi=self.config.fig_dpi)
 
-        # Create coordinate grids
+        # Create coordinate grids more efficiently
         lon_grid = np.linspace(min_lon, max_lon, z_smoothed.shape[1])
         lat_grid = np.linspace(min_lat, max_lat, z_smoothed.shape[0])
-        lon_mesh, lat_mesh = np.meshgrid(lon_grid, lat_grid)
+        lon_mesh, lat_mesh = np.meshgrid(lon_grid, lat_grid, indexing='xy')
 
         # Create contour plots
         contour_levels = np.arange(0, self.config.contour_max_depth, self.config.contour_step)
+        
+        # Ensure we have valid contour levels
+        if len(contour_levels) == 0:
+            contour_levels = np.array([0, 10, 20, 30, 40])
+        
         ax.contourf(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
-                   cmap='Blues', alpha=self.config.tile_opacity, corner_mask=False)
+                   cmap='Blues', alpha=self.config.tile_opacity, corner_mask=False, extend='max')
 
         cs_lines = ax.contour(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
                              colors='black', linewidths=0.9, alpha=self.config.contour_opacity,
                              corner_mask=False, antialiased=True)
 
-        ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
+        # Only add labels if we have contour lines
+        try:
+            if hasattr(cs_lines, 'collections') and len(cs_lines.collections) > 0:
+                ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
+            elif hasattr(cs_lines, 'levels') and len(cs_lines.levels) > 0:
+                ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
+        except (AttributeError, ValueError):
+            # Skip labeling if there's an issue with contour lines
+            pass
 
         # Configure plot appearance
         ax.set_xlim(min_lon, max_lon)
@@ -206,19 +287,25 @@ class BathymetryTiler:
         ax.set_xticks([])
         ax.set_yticks([])
         ax.axis('off')
+        
+        # Set transparent background
         fig.patch.set_alpha(0)
         ax.patch.set_alpha(0)
+        
+        # Use subplots_adjust instead of tight_layout to avoid warnings
+        fig.subplots_adjust(left=0, right=1, top=1, bottom=0, wspace=0, hspace=0)
+        
+        # Cleanup coordinate grids
+        del lon_grid, lat_grid, lon_mesh, lat_mesh
 
-        plt.tight_layout(pad=0)
-
-        return fig, ax
+        return fig
 
     def _cleanup_memory(self, *objects) -> None:
         """Clean up memory by deleting objects and running garbage collection."""
         for obj in objects:
-            del obj
-        plt.clf()
-        plt.cla()
+            if obj is not None:
+                del obj
+        plt.close('all')  # More thorough cleanup
         gc.collect()
 
     def create_tile_svg(self, tile_x: int, tile_y: int, resolution: Optional[int] = None) -> Optional[Dict[str, Any]]:
@@ -251,13 +338,15 @@ class BathymetryTiler:
             z_smoothed = self._smooth_and_crop(z_grid_overlap, resolution_lon, resolution_lat)
 
             # Create plot
-            fig, _ = self._create_plot(z_smoothed, min_lon, max_lon, min_lat, max_lat, lon_correction)
+            fig = self._create_plot(z_smoothed, min_lon, max_lon, min_lat, max_lat, lon_correction)
 
             # Save SVG
+            self.output_dir.mkdir(exist_ok=True)  # Ensure directory exists
             svg_filename = self.output_dir / f'tile_{min_lat:.6f}_{min_lon:.6f}_{max_lat:.6f}_{max_lon:.6f}.svg'
-            plt.savefig(svg_filename, format='svg', bbox_inches='tight', pad_inches=0,
-                       transparent=True, facecolor='none')
+            fig.savefig(svg_filename, format='svg', bbox_inches=None, pad_inches=0,
+                       transparent=True, facecolor='none', edgecolor='none')
             plt.close(fig)
+            del fig
 
             # Create metadata
             tile_metadata = {
@@ -270,7 +359,7 @@ class BathymetryTiler:
                 }
             }
 
-            # Cleanup memory
+            # Cleanup memory more aggressively
             self._cleanup_memory(
                 lon_mesh_overlap, lat_mesh_overlap, z_grid_overlap, z_smoothed,
                 tile_data, lon_grid_overlap, lat_grid_overlap
@@ -279,11 +368,13 @@ class BathymetryTiler:
             return tile_metadata
 
         except Exception as e:
+            print(f"Error creating tile ({tile_x}, {tile_y}): {e}")
             return None
 
     def generate_all_tiles(self, resolution: Optional[int] = None, batch_size: Optional[int] = None,
                           progress_callback: Optional[callable] = None,
-                          should_stop_callback: Optional[callable] = None) -> List[Dict[str, Any]]:
+                          should_stop_callback: Optional[callable] = None,
+                          use_parallel: bool = True) -> List[Dict[str, Any]]:
         """Generate all tiles and return metadata."""
         if resolution is None:
             resolution = self.config.resolution
@@ -291,15 +382,23 @@ class BathymetryTiler:
             batch_size = self.config.batch_size
 
         total_tiles = (self.tile_max_x - self.tile_min_x) * (self.tile_max_y - self.tile_min_y)
-        processed = 0
         all_metadata = []
 
         if progress_callback:
             progress_callback(0, total_tiles, "Starting tile generation...")
 
-        for tile_x in range(self.tile_min_x, self.tile_max_x):
-            for tile_y in range(self.tile_min_y, self.tile_max_y):
-                # Check if we should stop
+        # Generate list of all tile coordinates
+        tile_coords = [(x, y) for x in range(self.tile_min_x, self.tile_max_x) 
+                      for y in range(self.tile_min_y, self.tile_max_y)]
+
+        if use_parallel and self.config.n_workers > 1:
+            # Parallel generation
+            all_metadata = self._generate_tiles_parallel(tile_coords, resolution, 
+                                                        progress_callback, should_stop_callback)
+        else:
+            # Sequential generation (original behavior)
+            processed = 0
+            for tile_x, tile_y in tile_coords:
                 if should_stop_callback and should_stop_callback():
                     break
 
@@ -308,25 +407,66 @@ class BathymetryTiler:
                     all_metadata.append(tile_metadata)
                 processed += 1
 
-                # Report progress
                 if progress_callback:
                     progress_callback(processed, total_tiles, f"Generated tile {processed}/{total_tiles}")
 
-                # Force garbage collection every batch_size tiles
                 if processed % batch_size == 0:
                     gc.collect()
 
-            # Check if we should stop (outer loop break)
-            if should_stop_callback and should_stop_callback():
-                break
-
         # Save all metadata to JSON file
+        self.output_dir.mkdir(exist_ok=True)  # Ensure directory exists
         metadata_file = self.output_dir / 'tiles_metadata.json'
         with open(metadata_file, 'w') as f:
             json.dump(all_metadata, f, indent=2)
 
-
         if progress_callback:
-            progress_callback(total_tiles, total_tiles, f"Completed all {processed} tiles")
+            progress_callback(total_tiles, total_tiles, f"Completed all {len(all_metadata)} tiles")
 
         return all_metadata
+
+    def _generate_tiles_parallel(self, tile_coords: List[Tuple[int, int]], resolution: int,
+                               progress_callback: Optional[callable] = None,
+                               should_stop_callback: Optional[callable] = None) -> List[Dict[str, Any]]:
+        """Generate tiles in parallel using ThreadPoolExecutor."""
+        all_metadata = []
+        total_tiles = len(tile_coords)
+        processed = 0
+        
+        # Create batches to avoid memory issues
+        batch_size = min(self.config.batch_size, len(tile_coords))
+        batches = [tile_coords[i:i + batch_size] for i in range(0, len(tile_coords), batch_size)]
+        
+        with ThreadPoolExecutor(max_workers=self.config.n_workers) as executor:
+            for batch in batches:
+                if should_stop_callback and should_stop_callback():
+                    break
+                    
+                # Submit batch for processing
+                future_to_coord = {executor.submit(self._create_tile_worker, coord[0], coord[1], resolution): coord 
+                                 for coord in batch}
+                
+                # Collect results
+                for future in as_completed(future_to_coord):
+                    if should_stop_callback and should_stop_callback():
+                        break
+                        
+                    try:
+                        tile_metadata = future.result()
+                        if tile_metadata:
+                            all_metadata.append(tile_metadata)
+                    except Exception as e:
+                        coord = future_to_coord[future]
+                        print(f"Error processing tile {coord}: {e}")
+                    
+                    processed += 1
+                    if progress_callback:
+                        progress_callback(processed, total_tiles, f"Generated tile {processed}/{total_tiles}")
+                
+                # Force garbage collection after each batch
+                gc.collect()
+        
+        return all_metadata
+    
+    def _create_tile_worker(self, tile_x: int, tile_y: int, resolution: int) -> Optional[Dict[str, Any]]:
+        """Worker function for parallel tile generation."""
+        return self.create_tile_svg(tile_x, tile_y, resolution)

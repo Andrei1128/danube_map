@@ -10,6 +10,8 @@
   "fig_dpi": 1000,
   "tile_opacity": 0.9,
   "contour_opacity": 0.9,
+  "n_workers": 0,
+  "use_parallel": true,
   "use_custom_bounds": false,
   "min_lat": null,
   "max_lat": null,

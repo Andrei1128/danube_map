@@ -1,0 +1,7175 @@
+[
+  {
+    "filename": "tile_45.290000_28.450000_45.300000_28.460000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.45,
+      "max_lon": 28.46
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.450000_45.290000_28.460000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.45,
+      "max_lon": 28.46
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.460000_45.280000_28.470000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.46,
+      "max_lon": 28.47
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.460000_45.300000_28.470000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.46,
+      "max_lon": 28.47
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.460000_45.290000_28.470000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.46,
+      "max_lon": 28.47
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.470000_45.290000_28.480000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.47,
+      "max_lon": 28.48
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.470000_45.280000_28.480000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.47,
+      "max_lon": 28.48
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.480000_45.290000_28.490000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.48,
+      "max_lon": 28.490000000000002
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.480000_45.280000_28.490000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.48,
+      "max_lon": 28.490000000000002
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.490000_45.270000_28.500000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.490000000000002,
+      "max_lon": 28.5
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.490000_45.290000_28.500000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.490000000000002,
+      "max_lon": 28.5
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.490000_45.280000_28.500000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.490000000000002,
+      "max_lon": 28.5
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.500000_45.270000_28.510000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.5,
+      "max_lon": 28.51
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.500000_45.280000_28.510000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.5,
+      "max_lon": 28.51
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.510000_45.260000_28.520000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.51,
+      "max_lon": 28.52
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.510000_45.280000_28.520000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.51,
+      "max_lon": 28.52
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.510000_45.270000_28.520000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.51,
+      "max_lon": 28.52
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.520000_45.280000_28.530000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.52,
+      "max_lon": 28.53
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.520000_45.260000_28.530000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.52,
+      "max_lon": 28.53
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.520000_45.270000_28.530000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.52,
+      "max_lon": 28.53
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.530000_45.260000_28.540000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.53,
+      "max_lon": 28.54
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.530000_45.270000_28.540000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.53,
+      "max_lon": 28.54
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.540000_45.250000_28.550000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.54,
+      "max_lon": 28.55
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.540000_45.270000_28.550000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.54,
+      "max_lon": 28.55
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.540000_45.260000_28.550000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.54,
+      "max_lon": 28.55
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.550000_45.270000_28.560000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.55,
+      "max_lon": 28.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.550000_45.250000_28.560000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.55,
+      "max_lon": 28.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.550000_45.260000_28.560000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.55,
+      "max_lon": 28.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.560000_45.250000_28.570000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.560000000000002,
+      "max_lon": 28.57
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.560000_45.260000_28.570000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.560000000000002,
+      "max_lon": 28.57
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.570000_45.260000_28.580000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.57,
+      "max_lon": 28.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.570000_45.250000_28.580000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.57,
+      "max_lon": 28.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.580000_45.250000_28.590000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.580000000000002,
+      "max_lon": 28.59
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.590000_45.250000_28.600000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.59,
+      "max_lon": 28.6
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.600000_45.250000_28.610000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.6,
+      "max_lon": 28.61
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.610000_45.240000_28.620000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.61,
+      "max_lon": 28.62
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.610000_45.250000_28.620000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.61,
+      "max_lon": 28.62
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.620000_45.240000_28.630000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.62,
+      "max_lon": 28.63
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.620000_45.250000_28.630000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.62,
+      "max_lon": 28.63
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.630000_45.240000_28.640000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.63,
+      "max_lon": 28.64
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.630000_45.250000_28.640000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.63,
+      "max_lon": 28.64
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.640000_45.250000_28.650000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.64,
+      "max_lon": 28.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.640000_45.240000_28.650000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.64,
+      "max_lon": 28.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.650000_45.240000_28.660000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.650000000000002,
+      "max_lon": 28.66
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.650000_45.250000_28.660000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.650000000000002,
+      "max_lon": 28.66
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.660000_45.230000_28.670000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.66,
+      "max_lon": 28.67
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.660000_45.250000_28.670000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.66,
+      "max_lon": 28.67
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.660000_45.240000_28.670000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.66,
+      "max_lon": 28.67
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.670000_45.230000_28.680000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.67,
+      "max_lon": 28.68
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.670000_45.250000_28.680000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.67,
+      "max_lon": 28.68
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.670000_45.240000_28.680000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.67,
+      "max_lon": 28.68
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.680000_45.230000_28.690000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.68,
+      "max_lon": 28.69
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.680000_45.240000_28.690000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.68,
+      "max_lon": 28.69
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.690000_45.240000_28.700000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.69,
+      "max_lon": 28.7
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.690000_45.230000_28.700000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.69,
+      "max_lon": 28.7
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.700000_45.240000_28.710000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.7,
+      "max_lon": 28.71
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.700000_45.230000_28.710000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.7,
+      "max_lon": 28.71
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.710000_45.230000_28.720000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.71,
+      "max_lon": 28.72
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.720000_45.240000_28.730000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.72,
+      "max_lon": 28.73
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.720000_45.230000_28.730000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.72,
+      "max_lon": 28.73
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.730000_45.240000_28.740000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.73,
+      "max_lon": 28.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.730000_45.230000_28.740000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.73,
+      "max_lon": 28.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.740000_45.280000_28.750000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.740000000000002,
+      "max_lon": 28.75
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.740000_45.290000_28.750000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.740000000000002,
+      "max_lon": 28.75
+    }
+  },
+  {
+    "filename": "tile_45.210000_28.740000_45.220000_28.750000.svg",
+    "coordinates": {
+      "min_lat": 45.21,
+      "max_lat": 45.22,
+      "min_lon": 28.740000000000002,
+      "max_lon": 28.75
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.740000_45.230000_28.750000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.740000000000002,
+      "max_lon": 28.75
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.740000_45.240000_28.750000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.740000000000002,
+      "max_lon": 28.75
+    }
+  },
+  {
+    "filename": "tile_45.220000_28.750000_45.230000_28.760000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 28.75,
+      "max_lon": 28.76
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.750000_45.240000_28.760000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.75,
+      "max_lon": 28.76
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.750000_45.270000_28.760000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.75,
+      "max_lon": 28.76
+    }
+  },
+  {
+    "filename": "tile_45.210000_28.750000_45.220000_28.760000.svg",
+    "coordinates": {
+      "min_lat": 45.21,
+      "max_lat": 45.22,
+      "min_lon": 28.75,
+      "max_lon": 28.76
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.750000_45.300000_28.760000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.75,
+      "max_lon": 28.76
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.750000_45.280000_28.760000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.75,
+      "max_lon": 28.76
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.750000_45.290000_28.760000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.75,
+      "max_lon": 28.76
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.760000_45.260000_28.770000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.76,
+      "max_lon": 28.77
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.760000_45.280000_28.770000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.76,
+      "max_lon": 28.77
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.760000_45.290000_28.770000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.76,
+      "max_lon": 28.77
+    }
+  },
+  {
+    "filename": "tile_45.210000_28.760000_45.220000_28.770000.svg",
+    "coordinates": {
+      "min_lat": 45.21,
+      "max_lat": 45.22,
+      "min_lon": 28.76,
+      "max_lon": 28.77
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.760000_45.300000_28.770000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.76,
+      "max_lon": 28.77
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.760000_45.240000_28.770000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.76,
+      "max_lon": 28.77
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.760000_45.270000_28.770000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.76,
+      "max_lon": 28.77
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.770000_45.320000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.770000_45.290000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.770000_45.300000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.770000_45.260000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.770000_45.250000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.770000_45.240000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.210000_28.770000_45.220000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.21,
+      "max_lat": 45.22,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.770000_45.270000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.770000_45.330000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.770000_45.340000_28.780000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.77,
+      "max_lon": 28.78
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.780000_45.210000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.780000_45.200000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.780000_45.250000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.780000_45.190000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.780000_45.240000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.780000_45.260000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.210000_28.780000_45.220000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.21,
+      "max_lat": 45.22,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.780000_45.270000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.780000_45.290000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.780000_45.300000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.780000_45.320000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.780000_45.330000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.780000_45.340000_28.790000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.78,
+      "max_lon": 28.79
+    }
+  },
+  {
+    "filename": "tile_45.170000_28.790000_45.180000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.210000_28.790000_45.220000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.21,
+      "max_lat": 45.22,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.230000_28.790000_45.240000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.250000_28.790000_45.260000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.240000_28.790000_45.250000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.790000_45.200000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.790000_45.210000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.790000_45.190000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.260000_28.790000_45.270000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.790000_45.290000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.790000_45.330000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.790000_45.310000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.790000_45.320000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.790000_45.340000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.790000_45.300000_28.800000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.79,
+      "max_lon": 28.8
+    }
+  },
+  {
+    "filename": "tile_45.340000_28.800000_45.350000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_28.800000_45.180000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.800000_45.200000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.800000_45.300000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.800000_45.340000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.800000_45.310000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.800000_45.320000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.800000_45.190000_28.810000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.8,
+      "max_lon": 28.810000000000002
+    }
+  },
+  {
+    "filename": "tile_45.340000_28.810000_45.350000_28.820000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 28.810000000000002,
+      "max_lon": 28.82
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.810000_45.190000_28.820000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.810000000000002,
+      "max_lon": 28.82
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.810000_45.210000_28.820000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.810000000000002,
+      "max_lon": 28.82
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.810000_45.200000_28.820000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.810000000000002,
+      "max_lon": 28.82
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.810000_45.340000_28.820000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.810000000000002,
+      "max_lon": 28.82
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.820000_45.200000_28.830000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.82,
+      "max_lon": 28.830000000000002
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.820000_45.210000_28.830000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.82,
+      "max_lon": 28.830000000000002
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.820000_45.330000_28.830000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.82,
+      "max_lon": 28.830000000000002
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.820000_45.340000_28.830000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.82,
+      "max_lon": 28.830000000000002
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.830000_45.200000_28.840000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.830000000000002,
+      "max_lon": 28.84
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.830000_45.210000_28.840000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.830000000000002,
+      "max_lon": 28.84
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.830000_45.340000_28.840000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.830000000000002,
+      "max_lon": 28.84
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.830000_45.320000_28.840000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.830000000000002,
+      "max_lon": 28.84
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.830000_45.330000_28.840000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.830000000000002,
+      "max_lon": 28.84
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.840000_45.210000_28.850000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.84,
+      "max_lon": 28.85
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.840000_45.320000_28.850000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.84,
+      "max_lon": 28.85
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.840000_45.330000_28.850000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.84,
+      "max_lon": 28.85
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.850000_45.200000_28.860000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.85,
+      "max_lon": 28.86
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.850000_45.210000_28.860000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.85,
+      "max_lon": 28.86
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.850000_45.320000_28.860000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.85,
+      "max_lon": 28.86
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.860000_45.210000_28.870000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.86,
+      "max_lon": 28.87
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.860000_45.200000_28.870000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.86,
+      "max_lon": 28.87
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.860000_45.320000_28.870000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.86,
+      "max_lon": 28.87
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.870000_45.190000_28.880000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.87,
+      "max_lon": 28.88
+    }
+  },
+  {
+    "filename": "tile_45.200000_28.870000_45.210000_28.880000.svg",
+    "coordinates": {
+      "min_lat": 45.2,
+      "max_lat": 45.21,
+      "min_lon": 28.87,
+      "max_lon": 28.88
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.870000_45.310000_28.880000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.87,
+      "max_lon": 28.88
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.870000_45.200000_28.880000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.87,
+      "max_lon": 28.88
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.870000_45.320000_28.880000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.87,
+      "max_lon": 28.88
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.880000_45.200000_28.890000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.88,
+      "max_lon": 28.89
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.880000_45.190000_28.890000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.88,
+      "max_lon": 28.89
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.880000_45.300000_28.890000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.88,
+      "max_lon": 28.89
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.880000_45.320000_28.890000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.88,
+      "max_lon": 28.89
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.880000_45.310000_28.890000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.88,
+      "max_lon": 28.89
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.890000_45.200000_28.900000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.89,
+      "max_lon": 28.900000000000002
+    }
+  },
+  {
+    "filename": "tile_45.160000_28.890000_45.170000_28.900000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 28.89,
+      "max_lon": 28.900000000000002
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.890000_45.300000_28.900000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.89,
+      "max_lon": 28.900000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_28.890000_45.180000_28.900000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 28.89,
+      "max_lon": 28.900000000000002
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.890000_45.310000_28.900000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.89,
+      "max_lon": 28.900000000000002
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.890000_45.190000_28.900000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.89,
+      "max_lon": 28.900000000000002
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.900000_45.200000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.900000_45.310000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.150000_28.900000_45.160000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.170000_28.900000_45.180000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.900000_45.290000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.900000_45.300000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.160000_28.900000_45.170000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.900000_45.190000_28.910000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.900000000000002,
+      "max_lon": 28.91
+    }
+  },
+  {
+    "filename": "tile_45.160000_28.910000_45.170000_28.920000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 28.91,
+      "max_lon": 28.92
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.910000_45.200000_28.920000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.91,
+      "max_lon": 28.92
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.910000_45.190000_28.920000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.91,
+      "max_lon": 28.92
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.910000_45.300000_28.920000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.91,
+      "max_lon": 28.92
+    }
+  },
+  {
+    "filename": "tile_45.150000_28.910000_45.160000_28.920000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 28.91,
+      "max_lon": 28.92
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.910000_45.290000_28.920000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.91,
+      "max_lon": 28.92
+    }
+  },
+  {
+    "filename": "tile_45.140000_28.920000_45.150000_28.930000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 28.92,
+      "max_lon": 28.93
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.920000_45.190000_28.930000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.92,
+      "max_lon": 28.93
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.920000_45.200000_28.930000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.92,
+      "max_lon": 28.93
+    }
+  },
+  {
+    "filename": "tile_45.150000_28.920000_45.160000_28.930000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 28.92,
+      "max_lon": 28.93
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.920000_45.280000_28.930000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.92,
+      "max_lon": 28.93
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.920000_45.290000_28.930000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.92,
+      "max_lon": 28.93
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.930000_45.190000_28.940000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.93,
+      "max_lon": 28.94
+    }
+  },
+  {
+    "filename": "tile_45.140000_28.930000_45.150000_28.940000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 28.93,
+      "max_lon": 28.94
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.930000_45.280000_28.940000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.93,
+      "max_lon": 28.94
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.930000_45.290000_28.940000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.93,
+      "max_lon": 28.94
+    }
+  },
+  {
+    "filename": "tile_45.150000_28.930000_45.160000_28.940000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 28.93,
+      "max_lon": 28.94
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.930000_45.200000_28.940000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.93,
+      "max_lon": 28.94
+    }
+  },
+  {
+    "filename": "tile_45.150000_28.940000_45.160000_28.950000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 28.94,
+      "max_lon": 28.95
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.940000_45.200000_28.950000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.94,
+      "max_lon": 28.95
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.940000_45.320000_28.950000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.94,
+      "max_lon": 28.95
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.940000_45.310000_28.950000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.94,
+      "max_lon": 28.95
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.940000_45.290000_28.950000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.94,
+      "max_lon": 28.95
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.940000_45.280000_28.950000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.94,
+      "max_lon": 28.95
+    }
+  },
+  {
+    "filename": "tile_45.140000_28.940000_45.150000_28.950000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 28.94,
+      "max_lon": 28.95
+    }
+  },
+  {
+    "filename": "tile_45.270000_28.950000_45.280000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.150000_28.950000_45.160000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.950000_45.200000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.280000_28.950000_45.290000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.140000_28.950000_45.150000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.300000_28.950000_45.310000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.950000_45.320000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.290000_28.950000_45.300000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.950000_45.340000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.950000_45.330000_28.960000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.95,
+      "max_lon": 28.96
+    }
+  },
+  {
+    "filename": "tile_45.130000_28.960000_45.140000_28.970000.svg",
+    "coordinates": {
+      "min_lat": 45.13,
+      "max_lat": 45.14,
+      "min_lon": 28.96,
+      "max_lon": 28.97
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.960000_45.200000_28.970000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.96,
+      "max_lon": 28.97
+    }
+  },
+  {
+    "filename": "tile_45.140000_28.960000_45.150000_28.970000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 28.96,
+      "max_lon": 28.97
+    }
+  },
+  {
+    "filename": "tile_45.310000_28.960000_45.320000_28.970000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 28.96,
+      "max_lon": 28.97
+    }
+  },
+  {
+    "filename": "tile_45.340000_28.960000_45.350000_28.970000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 28.96,
+      "max_lon": 28.97
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.960000_45.330000_28.970000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.96,
+      "max_lon": 28.97
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.960000_45.340000_28.970000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.96,
+      "max_lon": 28.97
+    }
+  },
+  {
+    "filename": "tile_45.320000_28.970000_45.330000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.350000_28.970000_45.360000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.970000_45.190000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.140000_28.970000_45.150000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.970000_45.200000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.970000_45.340000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.340000_28.970000_45.350000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.130000_28.970000_45.140000_28.980000.svg",
+    "coordinates": {
+      "min_lat": 45.13,
+      "max_lat": 45.14,
+      "min_lon": 28.97,
+      "max_lon": 28.98
+    }
+  },
+  {
+    "filename": "tile_45.170000_28.980000_45.180000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.340000_28.980000_45.350000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.190000_28.980000_45.200000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.19,
+      "max_lat": 45.2,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.120000_28.980000_45.130000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.980000_45.340000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.980000_45.190000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.130000_28.980000_45.140000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.13,
+      "max_lat": 45.14,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.350000_28.980000_45.360000_28.990000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 28.98,
+      "max_lon": 28.990000000000002
+    }
+  },
+  {
+    "filename": "tile_45.340000_28.990000_45.350000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.130000_28.990000_45.140000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.13,
+      "max_lat": 45.14,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.360000_28.990000_45.370000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.120000_28.990000_45.130000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.180000_28.990000_45.190000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.350000_28.990000_45.360000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.330000_28.990000_45.340000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.170000_28.990000_45.180000_29.000000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 28.990000000000002,
+      "max_lon": 29.0
+    }
+  },
+  {
+    "filename": "tile_45.120000_29.000000_45.130000_29.010000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 29.0,
+      "max_lon": 29.01
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.000000_45.180000_29.010000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.0,
+      "max_lon": 29.01
+    }
+  },
+  {
+    "filename": "tile_45.330000_29.000000_45.340000_29.010000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 29.0,
+      "max_lon": 29.01
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.000000_45.360000_29.010000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.0,
+      "max_lon": 29.01
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.000000_45.370000_29.010000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.0,
+      "max_lon": 29.01
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.000000_45.350000_29.010000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.0,
+      "max_lon": 29.01
+    }
+  },
+  {
+    "filename": "tile_45.120000_29.010000_45.130000_29.020000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 29.01,
+      "max_lon": 29.02
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.010000_45.170000_29.020000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.01,
+      "max_lon": 29.02
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.010000_45.370000_29.020000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.01,
+      "max_lon": 29.02
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.010000_45.350000_29.020000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.01,
+      "max_lon": 29.02
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.010000_45.180000_29.020000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.01,
+      "max_lon": 29.02
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.010000_45.360000_29.020000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.01,
+      "max_lon": 29.02
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.020000_45.120000_29.030000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.02,
+      "max_lon": 29.03
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.020000_45.170000_29.030000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.02,
+      "max_lon": 29.03
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.020000_45.180000_29.030000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.02,
+      "max_lon": 29.03
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.020000_45.350000_29.030000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.02,
+      "max_lon": 29.03
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.020000_45.360000_29.030000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.02,
+      "max_lon": 29.03
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.020000_45.370000_29.030000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.02,
+      "max_lon": 29.03
+    }
+  },
+  {
+    "filename": "tile_45.120000_29.020000_45.130000_29.030000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 29.02,
+      "max_lon": 29.03
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.030000_45.180000_29.040000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.03,
+      "max_lon": 29.04
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.030000_45.360000_29.040000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.03,
+      "max_lon": 29.04
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.030000_45.120000_29.040000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.03,
+      "max_lon": 29.04
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.030000_45.370000_29.040000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.03,
+      "max_lon": 29.04
+    }
+  },
+  {
+    "filename": "tile_45.120000_29.030000_45.130000_29.040000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 29.03,
+      "max_lon": 29.04
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.040000_45.180000_29.050000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.04,
+      "max_lon": 29.05
+    }
+  },
+  {
+    "filename": "tile_45.120000_29.040000_45.130000_29.050000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 29.04,
+      "max_lon": 29.05
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.040000_45.120000_29.050000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.04,
+      "max_lon": 29.05
+    }
+  },
+  {
+    "filename": "tile_45.120000_29.050000_45.130000_29.060000.svg",
+    "coordinates": {
+      "min_lat": 45.12,
+      "max_lat": 45.13,
+      "min_lon": 29.05,
+      "max_lon": 29.060000000000002
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.040000_45.380000_29.050000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.04,
+      "max_lon": 29.05
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.040000_45.360000_29.050000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.04,
+      "max_lon": 29.05
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.050000_45.120000_29.060000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.05,
+      "max_lon": 29.060000000000002
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.040000_45.370000_29.050000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.04,
+      "max_lon": 29.05
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.050000_45.360000_29.060000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.05,
+      "max_lon": 29.060000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.050000_45.180000_29.060000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.05,
+      "max_lon": 29.060000000000002
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.050000_45.370000_29.060000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.05,
+      "max_lon": 29.060000000000002
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.050000_45.380000_29.060000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.05,
+      "max_lon": 29.060000000000002
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.060000_45.360000_29.070000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.060000000000002,
+      "max_lon": 29.07
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.060000_45.180000_29.070000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.060000000000002,
+      "max_lon": 29.07
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.060000_45.390000_29.070000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.060000000000002,
+      "max_lon": 29.07
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.060000_45.120000_29.070000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.060000000000002,
+      "max_lon": 29.07
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.060000_45.370000_29.070000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.060000000000002,
+      "max_lon": 29.07
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.060000_45.110000_29.070000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.060000000000002,
+      "max_lon": 29.07
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.060000_45.380000_29.070000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.060000000000002,
+      "max_lon": 29.07
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.070000_45.370000_29.080000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.07,
+      "max_lon": 29.080000000000002
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.070000_45.110000_29.080000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.07,
+      "max_lon": 29.080000000000002
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.070000_45.100000_29.080000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.07,
+      "max_lon": 29.080000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.070000_45.180000_29.080000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.07,
+      "max_lon": 29.080000000000002
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.070000_45.380000_29.080000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.07,
+      "max_lon": 29.080000000000002
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.070000_45.390000_29.080000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.07,
+      "max_lon": 29.080000000000002
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.080000_45.090000_29.090000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.080000000000002,
+      "max_lon": 29.09
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.080000_45.180000_29.090000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.080000000000002,
+      "max_lon": 29.09
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.080000_45.100000_29.090000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.080000000000002,
+      "max_lon": 29.09
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.080000_45.370000_29.090000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.080000000000002,
+      "max_lon": 29.09
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.090000_45.180000_29.100000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.09,
+      "max_lon": 29.1
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.080000_45.390000_29.090000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.080000000000002,
+      "max_lon": 29.09
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.090000_45.100000_29.100000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.09,
+      "max_lon": 29.1
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.090000_45.090000_29.100000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.09,
+      "max_lon": 29.1
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.080000_45.380000_29.090000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.080000000000002,
+      "max_lon": 29.09
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.090000_45.400000_29.100000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.09,
+      "max_lon": 29.1
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.090000_45.390000_29.100000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.09,
+      "max_lon": 29.1
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.090000_45.380000_29.100000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.09,
+      "max_lon": 29.1
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.100000_45.400000_29.110000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.1,
+      "max_lon": 29.11
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.100000_45.080000_29.110000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.1,
+      "max_lon": 29.11
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.100000_45.180000_29.110000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.1,
+      "max_lon": 29.11
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.100000_45.390000_29.110000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.1,
+      "max_lon": 29.11
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.100000_45.380000_29.110000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.1,
+      "max_lon": 29.11
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.100000_45.090000_29.110000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.1,
+      "max_lon": 29.11
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.110000_45.090000_29.120000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.11,
+      "max_lon": 29.12
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.110000_45.180000_29.120000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.11,
+      "max_lon": 29.12
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.110000_45.080000_29.120000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.11,
+      "max_lon": 29.12
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.110000_45.380000_29.120000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.11,
+      "max_lon": 29.12
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.110000_45.390000_29.120000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.11,
+      "max_lon": 29.12
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.120000_45.090000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.120000_45.070000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.120000_45.110000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.120000_45.180000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.120000_45.080000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.120000_45.100000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.130000_45.120000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.130000_45.090000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.120000_45.380000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.130000_45.100000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.130000_45.080000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.130000_45.070000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.130000_45.110000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.120000_45.390000_29.130000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.12,
+      "max_lon": 29.13
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.130000_45.180000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.140000_45.090000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.140000_45.080000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.130000_45.390000_29.140000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.13,
+      "max_lon": 29.14
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.140000_45.070000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.140000_45.400000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.140000_45.100000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.140000_45.120000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.140000_45.180000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.140000_45.110000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.140000_45.390000_29.150000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.14,
+      "max_lon": 29.150000000000002
+    }
+  },
+  {
+    "filename": "tile_45.050000_29.150000_45.060000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.050000000000004,
+      "max_lat": 45.06,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.150000_45.080000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.150000_45.120000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.150000_45.110000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.150000_45.180000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.150000_45.090000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.150000_45.100000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.150000_45.070000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.150000_45.190000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.150000_45.390000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.150000_45.400000_29.160000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.150000000000002,
+      "max_lon": 29.16
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.160000_45.100000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.160000_45.090000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.160000_45.120000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.160000_45.110000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.160000_45.190000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.160000_45.180000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.160000_45.070000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.050000_29.160000_45.060000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.050000000000004,
+      "max_lat": 45.06,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.170000_45.180000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.160000_45.390000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.170000_45.050000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.110000_29.170000_45.120000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.11,
+      "max_lat": 45.12,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.170000_45.190000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.170000_45.110000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.160000_45.400000_29.170000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.16,
+      "max_lon": 29.17
+    }
+  },
+  {
+    "filename": "tile_45.050000_29.170000_45.060000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.050000000000004,
+      "max_lat": 45.06,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.170000_45.410000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.050000_29.180000_45.060000_29.190000.svg",
+    "coordinates": {
+      "min_lat": 45.050000000000004,
+      "max_lat": 45.06,
+      "min_lon": 29.18,
+      "max_lon": 29.19
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.180000_45.110000_29.190000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.18,
+      "max_lon": 29.19
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.170000_45.400000_29.180000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.17,
+      "max_lon": 29.18
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.180000_45.050000_29.190000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.18,
+      "max_lon": 29.19
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.180000_45.400000_29.190000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.18,
+      "max_lon": 29.19
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.180000_45.190000_29.190000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.18,
+      "max_lon": 29.19
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.180000_45.420000_29.190000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.18,
+      "max_lon": 29.19
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.180000_45.410000_29.190000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.18,
+      "max_lon": 29.19
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.190000_45.070000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.190000_45.430000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.050000_29.190000_45.060000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.050000000000004,
+      "max_lat": 45.06,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.190000_45.100000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.190000_45.190000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.190000_45.110000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.190000_45.050000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.190000_45.420000_29.200000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.19,
+      "max_lon": 29.2
+    }
+  },
+  {
+    "filename": "tile_45.100000_29.200000_45.110000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.1,
+      "max_lat": 45.11,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.200000_45.040000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.200000_45.180000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.200000_45.090000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.200000_45.050000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.050000_29.200000_45.060000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.050000000000004,
+      "max_lat": 45.06,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.200000_45.100000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.200000_45.070000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.200000_45.190000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.210000_45.040000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.210000_45.050000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.200000_45.440000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.210000_45.080000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.210000_45.070000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.200000_45.420000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.200000_45.430000_29.210000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.2,
+      "max_lon": 29.21
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.210000_45.090000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.090000_29.210000_45.100000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.09,
+      "max_lat": 45.1,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.210000_45.180000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.210000_45.190000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.060000_29.220000_45.070000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.06,
+      "max_lat": 45.07,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.210000_45.450000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.210000_45.430000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.070000_29.220000_45.080000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.07,
+      "max_lat": 45.08,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.220000_45.040000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.210000_45.420000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.220000_45.050000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.080000_29.220000_45.090000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.08,
+      "max_lat": 45.09,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.210000_45.440000_29.220000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.21,
+      "max_lon": 29.22
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.220000_45.190000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.220000_45.180000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.220000_45.440000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.220000_45.420000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.220000_45.450000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.220000_45.430000_29.230000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.22,
+      "max_lon": 29.23
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.230000_45.190000_29.240000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.23,
+      "max_lon": 29.240000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.230000_45.180000_29.240000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.23,
+      "max_lon": 29.240000000000002
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.230000_45.050000_29.240000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.23,
+      "max_lon": 29.240000000000002
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.230000_45.430000_29.240000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.23,
+      "max_lon": 29.240000000000002
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.230000_45.040000_29.240000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.23,
+      "max_lon": 29.240000000000002
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.230000_45.440000_29.240000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.23,
+      "max_lon": 29.240000000000002
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.230000_45.450000_29.240000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.23,
+      "max_lon": 29.240000000000002
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.240000_45.050000_29.250000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.240000000000002,
+      "max_lon": 29.25
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.240000_45.180000_29.250000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.240000000000002,
+      "max_lon": 29.25
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.240000_45.040000_29.250000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.240000000000002,
+      "max_lon": 29.25
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.240000_45.430000_29.250000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.240000000000002,
+      "max_lon": 29.25
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.250000_45.040000_29.260000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.25,
+      "max_lon": 29.26
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.250000_45.180000_29.260000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.25,
+      "max_lon": 29.26
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.240000_45.450000_29.250000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.240000000000002,
+      "max_lon": 29.25
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.240000_45.440000_29.250000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.240000000000002,
+      "max_lon": 29.25
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.250000_45.450000_29.260000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.25,
+      "max_lon": 29.26
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.260000_45.050000_29.270000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.26,
+      "max_lon": 29.27
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.250000_45.430000_29.260000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.25,
+      "max_lon": 29.26
+    }
+  },
+  {
+    "filename": "tile_45.020000_29.260000_45.030000_29.270000.svg",
+    "coordinates": {
+      "min_lat": 45.02,
+      "max_lat": 45.03,
+      "min_lon": 29.26,
+      "max_lon": 29.27
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.250000_45.440000_29.260000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.25,
+      "max_lon": 29.26
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.260000_45.040000_29.270000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.26,
+      "max_lon": 29.27
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.260000_45.180000_29.270000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.26,
+      "max_lon": 29.27
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.260000_45.430000_29.270000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.26,
+      "max_lon": 29.27
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.260000_45.440000_29.270000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.26,
+      "max_lon": 29.27
+    }
+  },
+  {
+    "filename": "tile_45.010000_29.270000_45.020000_29.280000.svg",
+    "coordinates": {
+      "min_lat": 45.01,
+      "max_lat": 45.02,
+      "min_lon": 29.27,
+      "max_lon": 29.28
+    }
+  },
+  {
+    "filename": "tile_45.020000_29.270000_45.030000_29.280000.svg",
+    "coordinates": {
+      "min_lat": 45.02,
+      "max_lat": 45.03,
+      "min_lon": 29.27,
+      "max_lon": 29.28
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.270000_45.180000_29.280000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.27,
+      "max_lon": 29.28
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.270000_45.440000_29.280000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.27,
+      "max_lon": 29.28
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.270000_45.050000_29.280000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.27,
+      "max_lon": 29.28
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.270000_45.430000_29.280000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.27,
+      "max_lon": 29.28
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.270000_45.040000_29.280000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.27,
+      "max_lon": 29.28
+    }
+  },
+  {
+    "filename": "tile_45.040000_29.280000_45.050000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 45.04,
+      "max_lat": 45.050000000000004,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_45.030000_29.280000_45.040000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 45.03,
+      "max_lat": 45.04,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_45.020000_29.280000_45.030000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 45.02,
+      "max_lat": 45.03,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_44.990000_29.280000_45.000000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 44.99,
+      "max_lat": 45.0,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.280000_45.180000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_45.010000_29.280000_45.020000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 45.01,
+      "max_lat": 45.02,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_45.000000_29.280000_45.010000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 45.0,
+      "max_lat": 45.01,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_45.020000_29.290000_45.030000_29.300000.svg",
+    "coordinates": {
+      "min_lat": 45.02,
+      "max_lat": 45.03,
+      "min_lon": 29.29,
+      "max_lon": 29.3
+    }
+  },
+  {
+    "filename": "tile_45.000000_29.290000_45.010000_29.300000.svg",
+    "coordinates": {
+      "min_lat": 45.0,
+      "max_lat": 45.01,
+      "min_lon": 29.29,
+      "max_lon": 29.3
+    }
+  },
+  {
+    "filename": "tile_45.010000_29.290000_45.020000_29.300000.svg",
+    "coordinates": {
+      "min_lat": 45.01,
+      "max_lat": 45.02,
+      "min_lon": 29.29,
+      "max_lon": 29.3
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.290000_45.180000_29.300000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.29,
+      "max_lon": 29.3
+    }
+  },
+  {
+    "filename": "tile_44.990000_29.290000_45.000000_29.300000.svg",
+    "coordinates": {
+      "min_lat": 44.99,
+      "max_lat": 45.0,
+      "min_lon": 29.29,
+      "max_lon": 29.3
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.280000_45.430000_29.290000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.28,
+      "max_lon": 29.29
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.300000_44.970000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.300000_44.990000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.300000_44.980000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_45.010000_29.300000_45.020000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 45.01,
+      "max_lat": 45.02,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.290000_45.440000_29.300000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.29,
+      "max_lon": 29.3
+    }
+  },
+  {
+    "filename": "tile_45.020000_29.300000_45.030000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 45.02,
+      "max_lat": 45.03,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_44.990000_29.300000_45.000000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 44.99,
+      "max_lat": 45.0,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.290000_45.430000_29.300000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.29,
+      "max_lon": 29.3
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.300000_45.450000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.300000_45.180000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.300000_45.430000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.310000_44.970000_29.320000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.310000000000002,
+      "max_lon": 29.32
+    }
+  },
+  {
+    "filename": "tile_44.990000_29.310000_45.000000_29.320000.svg",
+    "coordinates": {
+      "min_lat": 44.99,
+      "max_lat": 45.0,
+      "min_lon": 29.310000000000002,
+      "max_lon": 29.32
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.310000_44.990000_29.320000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.310000000000002,
+      "max_lon": 29.32
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.310000_44.980000_29.320000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.310000000000002,
+      "max_lon": 29.32
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.300000_45.440000_29.310000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.3,
+      "max_lon": 29.310000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.310000_45.180000_29.320000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.310000000000002,
+      "max_lon": 29.32
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.310000_45.440000_29.320000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.310000000000002,
+      "max_lon": 29.32
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.310000_45.450000_29.320000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.310000000000002,
+      "max_lon": 29.32
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.320000_45.180000_29.330000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.32,
+      "max_lon": 29.330000000000002
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.320000_44.980000_29.330000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.32,
+      "max_lon": 29.330000000000002
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.320000_44.970000_29.330000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.32,
+      "max_lon": 29.330000000000002
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.330000_44.960000_29.340000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.330000000000002,
+      "max_lon": 29.34
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.330000_44.990000_29.340000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.330000000000002,
+      "max_lon": 29.34
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.320000_45.460000_29.330000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.32,
+      "max_lon": 29.330000000000002
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.330000_44.980000_29.340000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.330000000000002,
+      "max_lon": 29.34
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.330000_45.180000_29.340000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.330000000000002,
+      "max_lon": 29.34
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.330000_44.970000_29.340000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.330000000000002,
+      "max_lon": 29.34
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.320000_45.450000_29.330000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.32,
+      "max_lon": 29.330000000000002
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.330000_45.460000_29.340000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.330000000000002,
+      "max_lon": 29.34
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.340000_45.180000_29.350000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.34,
+      "max_lon": 29.35
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.340000_44.980000_29.350000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.34,
+      "max_lon": 29.35
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.340000_44.990000_29.350000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.34,
+      "max_lon": 29.35
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.340000_44.960000_29.350000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.34,
+      "max_lon": 29.35
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.340000_44.970000_29.350000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.34,
+      "max_lon": 29.35
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.330000_45.450000_29.340000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.330000000000002,
+      "max_lon": 29.34
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.350000_44.990000_29.360000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.35,
+      "max_lon": 29.36
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.350000_44.970000_29.360000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.35,
+      "max_lon": 29.36
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.340000_45.440000_29.350000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.34,
+      "max_lon": 29.35
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.350000_44.980000_29.360000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.35,
+      "max_lon": 29.36
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.340000_45.450000_29.350000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.34,
+      "max_lon": 29.35
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.350000_44.960000_29.360000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.35,
+      "max_lon": 29.36
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.350000_45.180000_29.360000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.35,
+      "max_lon": 29.36
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.350000_45.450000_29.360000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.35,
+      "max_lon": 29.36
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.360000_44.950000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.350000_45.440000_29.360000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.35,
+      "max_lon": 29.36
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.360000_45.450000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.360000_44.990000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.360000_45.180000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.360000_45.440000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.360000_44.970000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.360000_44.980000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.360000_44.960000_29.370000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.36,
+      "max_lon": 29.37
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.370000_44.970000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.370000_45.180000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.370000_44.980000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.370000_44.960000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.370000_44.990000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.370000_44.950000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.380000_44.960000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.370000_45.450000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.380000_44.980000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.380000_44.950000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.380000_44.970000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.380000_45.180000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.370000_45.440000_29.380000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.37,
+      "max_lon": 29.38
+    }
+  },
+  {
+    "filename": "tile_44.980000_29.380000_44.990000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 44.980000000000004,
+      "max_lat": 44.99,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.390000_44.960000_29.400000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.39,
+      "max_lon": 29.400000000000002
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.380000_45.450000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.390000_44.950000_29.400000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.39,
+      "max_lon": 29.400000000000002
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.380000_45.440000_29.390000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.38,
+      "max_lon": 29.39
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.400000_44.970000_29.410000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.400000000000002,
+      "max_lon": 29.41
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.400000_44.950000_29.410000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.400000000000002,
+      "max_lon": 29.41
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.390000_45.450000_29.400000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.39,
+      "max_lon": 29.400000000000002
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.390000_45.440000_29.400000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.39,
+      "max_lon": 29.400000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.390000_45.180000_29.400000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.39,
+      "max_lon": 29.400000000000002
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.400000_44.960000_29.410000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.400000000000002,
+      "max_lon": 29.41
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.400000_45.180000_29.410000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.400000000000002,
+      "max_lon": 29.41
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.400000_45.440000_29.410000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.400000000000002,
+      "max_lon": 29.41
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.400000_45.450000_29.410000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.400000000000002,
+      "max_lon": 29.41
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.410000_44.980000_29.420000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.41,
+      "max_lon": 29.42
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.410000_44.960000_29.420000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.41,
+      "max_lon": 29.42
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.410000_45.180000_29.420000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.41,
+      "max_lon": 29.42
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.410000_44.970000_29.420000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.41,
+      "max_lon": 29.42
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.420000_44.970000_29.430000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.42,
+      "max_lon": 29.43
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.420000_45.180000_29.430000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.42,
+      "max_lon": 29.43
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.420000_44.980000_29.430000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.42,
+      "max_lon": 29.43
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.410000_45.440000_29.420000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.41,
+      "max_lon": 29.42
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.410000_45.450000_29.420000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.41,
+      "max_lon": 29.42
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.430000_44.980000_29.440000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.43,
+      "max_lon": 29.44
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.420000_45.440000_29.430000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.42,
+      "max_lon": 29.43
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.420000_45.450000_29.430000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.42,
+      "max_lon": 29.43
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.430000_45.180000_29.440000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.43,
+      "max_lon": 29.44
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.440000_44.980000_29.450000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.44,
+      "max_lon": 29.45
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.430000_45.440000_29.440000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.43,
+      "max_lon": 29.44
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.430000_45.450000_29.440000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.43,
+      "max_lon": 29.44
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.440000_45.430000_29.450000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.44,
+      "max_lon": 29.45
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.440000_45.180000_29.450000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.44,
+      "max_lon": 29.45
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.440000_45.450000_29.450000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.44,
+      "max_lon": 29.45
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.440000_45.440000_29.450000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.44,
+      "max_lon": 29.45
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.450000_45.180000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.450000_44.970000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.450000_44.980000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.450000_44.960000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.450000_45.460000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_44.970000_29.460000_44.980000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 44.97,
+      "max_lat": 44.980000000000004,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.460000_45.180000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.450000_45.450000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.450000_45.440000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.450000_45.430000_29.460000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.45,
+      "max_lon": 29.46
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.460000_44.960000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.460000_44.970000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.460000_45.440000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.460000_45.450000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.460000_45.460000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.470000_44.960000_29.480000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.47,
+      "max_lon": 29.48
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.460000_45.430000_29.470000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.46,
+      "max_lon": 29.47
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.470000_44.970000_29.480000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.47,
+      "max_lon": 29.48
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.470000_45.420000_29.480000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.47,
+      "max_lon": 29.48
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.470000_45.180000_29.480000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.47,
+      "max_lon": 29.48
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.470000_45.460000_29.480000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.47,
+      "max_lon": 29.48
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.480000_44.960000_29.490000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.48,
+      "max_lon": 29.490000000000002
+    }
+  },
+  {
+    "filename": "tile_44.960000_29.480000_44.970000_29.490000.svg",
+    "coordinates": {
+      "min_lat": 44.96,
+      "max_lat": 44.97,
+      "min_lon": 29.48,
+      "max_lon": 29.490000000000002
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.470000_45.430000_29.480000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.47,
+      "max_lon": 29.48
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.480000_45.180000_29.490000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.48,
+      "max_lon": 29.490000000000002
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.480000_45.460000_29.490000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.48,
+      "max_lon": 29.490000000000002
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.480000_45.430000_29.490000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.48,
+      "max_lon": 29.490000000000002
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.480000_45.420000_29.490000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.48,
+      "max_lon": 29.490000000000002
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.490000_44.950000_29.500000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.490000000000002,
+      "max_lon": 29.5
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.490000_45.180000_29.500000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.490000000000002,
+      "max_lon": 29.5
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.490000_44.960000_29.500000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.490000000000002,
+      "max_lon": 29.5
+    }
+  },
+  {
+    "filename": "tile_44.950000_29.500000_44.960000_29.510000.svg",
+    "coordinates": {
+      "min_lat": 44.95,
+      "max_lat": 44.96,
+      "min_lon": 29.5,
+      "max_lon": 29.51
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.490000_45.420000_29.500000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.490000000000002,
+      "max_lon": 29.5
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.500000_45.180000_29.510000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.5,
+      "max_lon": 29.51
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.490000_45.460000_29.500000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.490000000000002,
+      "max_lon": 29.5
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.490000_45.430000_29.500000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.490000000000002,
+      "max_lon": 29.5
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.500000_44.950000_29.510000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.5,
+      "max_lon": 29.51
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.500000_45.450000_29.510000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.5,
+      "max_lon": 29.51
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.500000_45.430000_29.510000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.5,
+      "max_lon": 29.51
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.500000_45.460000_29.510000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.5,
+      "max_lon": 29.51
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.500000_45.420000_29.510000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.5,
+      "max_lon": 29.51
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.510000_44.950000_29.520000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.51,
+      "max_lon": 29.52
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.510000_45.190000_29.520000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.51,
+      "max_lon": 29.52
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.510000_45.420000_29.520000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.51,
+      "max_lon": 29.52
+    }
+  },
+  {
+    "filename": "tile_44.930000_29.520000_44.940000_29.530000.svg",
+    "coordinates": {
+      "min_lat": 44.93,
+      "max_lat": 44.94,
+      "min_lon": 29.52,
+      "max_lon": 29.53
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.510000_45.450000_29.520000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.51,
+      "max_lon": 29.52
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.510000_45.460000_29.520000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.51,
+      "max_lon": 29.52
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.520000_44.950000_29.530000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.52,
+      "max_lon": 29.53
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.510000_45.180000_29.520000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.51,
+      "max_lon": 29.52
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.520000_45.180000_29.530000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.52,
+      "max_lon": 29.53
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.520000_45.460000_29.530000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.52,
+      "max_lon": 29.53
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.520000_45.190000_29.530000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.52,
+      "max_lon": 29.53
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.520000_45.450000_29.530000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.52,
+      "max_lon": 29.53
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.520000_45.420000_29.530000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.52,
+      "max_lon": 29.53
+    }
+  },
+  {
+    "filename": "tile_44.920000_29.530000_44.930000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 44.92,
+      "max_lat": 44.93,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_44.940000_29.530000_44.950000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 44.94,
+      "max_lat": 44.95,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.530000_45.190000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.530000_45.410000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_44.930000_29.530000_44.940000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 44.93,
+      "max_lat": 44.94,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_44.910000_29.540000_44.920000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 44.910000000000004,
+      "max_lat": 44.92,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.540000_45.180000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.530000_45.440000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_44.930000_29.540000_44.940000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 44.93,
+      "max_lat": 44.94,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.530000_45.450000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.530000_45.420000_29.540000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.53,
+      "max_lon": 29.54
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.540000_45.190000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_44.920000_29.540000_44.930000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 44.92,
+      "max_lat": 44.93,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_44.900000_29.550000_44.910000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 44.9,
+      "max_lat": 44.910000000000004,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.540000_45.440000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_44.920000_29.550000_44.930000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 44.92,
+      "max_lat": 44.93,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.540000_45.430000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_44.910000_29.550000_44.920000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 44.910000000000004,
+      "max_lat": 44.92,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.540000_45.410000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.540000_45.420000_29.550000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.54,
+      "max_lon": 29.55
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.550000_45.400000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_44.890000_29.560000_44.900000_29.570000.svg",
+    "coordinates": {
+      "min_lat": 44.89,
+      "max_lat": 44.9,
+      "min_lon": 29.560000000000002,
+      "max_lon": 29.57
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.550000_45.430000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.180000_29.550000_45.190000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 45.18,
+      "max_lat": 45.19,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.550000_45.180000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.550000_45.420000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_44.900000_29.560000_44.910000_29.570000.svg",
+    "coordinates": {
+      "min_lat": 44.9,
+      "max_lat": 44.910000000000004,
+      "min_lon": 29.560000000000002,
+      "max_lon": 29.57
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.550000_45.410000_29.560000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.55,
+      "max_lon": 29.560000000000002
+    }
+  },
+  {
+    "filename": "tile_44.910000_29.560000_44.920000_29.570000.svg",
+    "coordinates": {
+      "min_lat": 44.910000000000004,
+      "max_lat": 44.92,
+      "min_lon": 29.560000000000002,
+      "max_lon": 29.57
+    }
+  },
+  {
+    "filename": "tile_44.900000_29.570000_44.910000_29.580000.svg",
+    "coordinates": {
+      "min_lat": 44.9,
+      "max_lat": 44.910000000000004,
+      "min_lon": 29.57,
+      "max_lon": 29.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.560000_45.180000_29.570000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.560000000000002,
+      "max_lon": 29.57
+    }
+  },
+  {
+    "filename": "tile_44.890000_29.570000_44.900000_29.580000.svg",
+    "coordinates": {
+      "min_lat": 44.89,
+      "max_lat": 44.9,
+      "min_lon": 29.57,
+      "max_lon": 29.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.560000_45.400000_29.570000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.560000000000002,
+      "max_lon": 29.57
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.560000_45.410000_29.570000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.560000000000002,
+      "max_lon": 29.57
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.570000_45.390000_29.580000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.57,
+      "max_lon": 29.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.570000_45.170000_29.580000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.57,
+      "max_lon": 29.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.570000_45.410000_29.580000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.57,
+      "max_lon": 29.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.570000_45.180000_29.580000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.57,
+      "max_lon": 29.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.570000_45.400000_29.580000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.57,
+      "max_lon": 29.580000000000002
+    }
+  },
+  {
+    "filename": "tile_45.170000_29.580000_45.180000_29.590000.svg",
+    "coordinates": {
+      "min_lat": 45.17,
+      "max_lat": 45.18,
+      "min_lon": 29.580000000000002,
+      "max_lon": 29.59
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.580000_45.170000_29.590000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.580000000000002,
+      "max_lon": 29.59
+    }
+  },
+  {
+    "filename": "tile_44.890000_29.580000_44.900000_29.590000.svg",
+    "coordinates": {
+      "min_lat": 44.89,
+      "max_lat": 44.9,
+      "min_lon": 29.580000000000002,
+      "max_lon": 29.59
+    }
+  },
+  {
+    "filename": "tile_44.880000_29.590000_44.890000_29.600000.svg",
+    "coordinates": {
+      "min_lat": 44.88,
+      "max_lat": 44.89,
+      "min_lon": 29.59,
+      "max_lon": 29.6
+    }
+  },
+  {
+    "filename": "tile_44.890000_29.590000_44.900000_29.600000.svg",
+    "coordinates": {
+      "min_lat": 44.89,
+      "max_lat": 44.9,
+      "min_lon": 29.59,
+      "max_lon": 29.6
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.580000_45.400000_29.590000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.580000000000002,
+      "max_lon": 29.59
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.590000_45.170000_29.600000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.59,
+      "max_lon": 29.6
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.580000_45.390000_29.590000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.580000000000002,
+      "max_lon": 29.59
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.590000_45.380000_29.600000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.59,
+      "max_lon": 29.6
+    }
+  },
+  {
+    "filename": "tile_44.880000_29.600000_44.890000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 44.88,
+      "max_lat": 44.89,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_44.890000_29.600000_44.900000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 44.89,
+      "max_lat": 44.9,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.590000_45.400000_29.600000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.59,
+      "max_lon": 29.6
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.590000_45.390000_29.600000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.59,
+      "max_lon": 29.6
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.600000_45.370000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.600000_45.160000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_44.870000_29.610000_44.880000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 44.87,
+      "max_lat": 44.88,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.600000_45.390000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.600000_45.400000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.600000_45.170000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_44.880000_29.610000_44.890000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 44.88,
+      "max_lat": 44.89,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.600000_45.380000_29.610000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.6,
+      "max_lon": 29.61
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.610000_45.360000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.610000_45.170000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.380000_29.610000_45.390000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.38,
+      "max_lat": 45.39,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.610000_45.160000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.610000_45.410000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.370000_29.610000_45.380000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.37,
+      "max_lat": 45.38,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.610000_45.370000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.390000_29.610000_45.400000_29.620000.svg",
+    "coordinates": {
+      "min_lat": 45.39,
+      "max_lat": 45.4,
+      "min_lon": 29.61,
+      "max_lon": 29.62
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.620000_45.170000_29.630000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.62,
+      "max_lon": 29.63
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.620000_45.160000_29.630000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.62,
+      "max_lon": 29.63
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.620000_45.350000_29.630000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.62,
+      "max_lon": 29.63
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.630000_45.170000_29.640000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.63,
+      "max_lon": 29.64
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.630000_45.160000_29.640000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.63,
+      "max_lon": 29.64
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.620000_45.420000_29.630000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.62,
+      "max_lon": 29.63
+    }
+  },
+  {
+    "filename": "tile_45.360000_29.620000_45.370000_29.630000.svg",
+    "coordinates": {
+      "min_lat": 45.36,
+      "max_lat": 45.37,
+      "min_lon": 29.62,
+      "max_lon": 29.63
+    }
+  },
+  {
+    "filename": "tile_45.400000_29.620000_45.410000_29.630000.svg",
+    "coordinates": {
+      "min_lat": 45.4,
+      "max_lat": 45.410000000000004,
+      "min_lon": 29.62,
+      "max_lon": 29.63
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.620000_45.360000_29.630000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.62,
+      "max_lon": 29.63
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.630000_45.430000_29.640000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.63,
+      "max_lon": 29.64
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.630000_45.360000_29.640000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.63,
+      "max_lon": 29.64
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.630000_45.350000_29.640000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.63,
+      "max_lon": 29.64
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.630000_45.420000_29.640000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.63,
+      "max_lon": 29.64
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.640000_45.360000_29.650000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.64,
+      "max_lon": 29.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.410000_29.640000_45.420000_29.650000.svg",
+    "coordinates": {
+      "min_lat": 45.410000000000004,
+      "max_lat": 45.42,
+      "min_lon": 29.64,
+      "max_lon": 29.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.640000_45.160000_29.650000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.64,
+      "max_lon": 29.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.330000_29.640000_45.340000_29.650000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 29.64,
+      "max_lon": 29.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.640000_45.430000_29.650000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.64,
+      "max_lon": 29.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.640000_45.350000_29.650000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.64,
+      "max_lon": 29.650000000000002
+    }
+  },
+  {
+    "filename": "tile_45.310000_29.650000_45.320000_29.660000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 29.650000000000002,
+      "max_lon": 29.66
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.650000_45.160000_29.660000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.650000000000002,
+      "max_lon": 29.66
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.650000_45.430000_29.660000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.650000000000002,
+      "max_lon": 29.66
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.650000_45.440000_29.660000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.650000000000002,
+      "max_lon": 29.66
+    }
+  },
+  {
+    "filename": "tile_45.320000_29.650000_45.330000_29.660000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 29.650000000000002,
+      "max_lon": 29.66
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.650000_45.350000_29.660000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.650000000000002,
+      "max_lon": 29.66
+    }
+  },
+  {
+    "filename": "tile_45.330000_29.650000_45.340000_29.660000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 29.650000000000002,
+      "max_lon": 29.66
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.660000_45.170000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.330000_29.660000_45.340000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.280000_29.660000_45.290000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.660000_45.160000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.290000_29.660000_45.300000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.320000_29.660000_45.330000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.32,
+      "max_lat": 45.33,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.300000_29.660000_45.310000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.310000_29.660000_45.320000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.660000_45.350000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.420000_29.660000_45.430000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.42,
+      "max_lat": 45.43,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.670000_45.170000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.660000_45.440000_29.670000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.66,
+      "max_lon": 29.67
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.670000_45.160000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.250000_29.670000_45.260000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.310000_29.670000_45.320000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.31,
+      "max_lat": 45.32,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.260000_29.670000_45.270000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.300000_29.670000_45.310000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.300000000000004,
+      "max_lat": 45.31,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.270000_29.670000_45.280000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.280000_29.670000_45.290000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.28,
+      "max_lat": 45.29,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.290000_29.670000_45.300000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.29,
+      "max_lat": 45.300000000000004,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.670000_45.350000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.670000_45.440000_29.680000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.67,
+      "max_lon": 29.68
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.680000_45.160000_29.690000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.68,
+      "max_lon": 29.69
+    }
+  },
+  {
+    "filename": "tile_45.270000_29.680000_45.280000_29.690000.svg",
+    "coordinates": {
+      "min_lat": 45.27,
+      "max_lat": 45.28,
+      "min_lon": 29.68,
+      "max_lon": 29.69
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.680000_45.170000_29.690000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.68,
+      "max_lon": 29.69
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.680000_45.440000_29.690000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.68,
+      "max_lon": 29.69
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.680000_45.350000_29.690000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.68,
+      "max_lon": 29.69
+    }
+  },
+  {
+    "filename": "tile_45.250000_29.680000_45.260000_29.690000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 29.68,
+      "max_lon": 29.69
+    }
+  },
+  {
+    "filename": "tile_45.260000_29.680000_45.270000_29.690000.svg",
+    "coordinates": {
+      "min_lat": 45.26,
+      "max_lat": 45.27,
+      "min_lon": 29.68,
+      "max_lon": 29.69
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.690000_45.450000_29.700000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.69,
+      "max_lon": 29.7
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.690000_45.360000_29.700000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.69,
+      "max_lon": 29.7
+    }
+  },
+  {
+    "filename": "tile_45.250000_29.690000_45.260000_29.700000.svg",
+    "coordinates": {
+      "min_lat": 45.25,
+      "max_lat": 45.26,
+      "min_lon": 29.69,
+      "max_lon": 29.7
+    }
+  },
+  {
+    "filename": "tile_45.240000_29.690000_45.250000_29.700000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 29.69,
+      "max_lon": 29.7
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.690000_45.170000_29.700000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.69,
+      "max_lon": 29.7
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.690000_45.440000_29.700000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.69,
+      "max_lon": 29.7
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.690000_45.350000_29.700000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.69,
+      "max_lon": 29.7
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.700000_45.170000_29.710000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.7,
+      "max_lon": 29.71
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.700000_45.360000_29.710000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.7,
+      "max_lon": 29.71
+    }
+  },
+  {
+    "filename": "tile_45.230000_29.700000_45.240000_29.710000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 29.7,
+      "max_lon": 29.71
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.700000_45.350000_29.710000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.7,
+      "max_lon": 29.71
+    }
+  },
+  {
+    "filename": "tile_45.240000_29.700000_45.250000_29.710000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 29.7,
+      "max_lon": 29.71
+    }
+  },
+  {
+    "filename": "tile_45.220000_29.710000_45.230000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.240000_29.710000_45.250000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.24,
+      "max_lat": 45.25,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.710000_45.170000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.700000_45.440000_29.710000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.7,
+      "max_lon": 29.71
+    }
+  },
+  {
+    "filename": "tile_45.230000_29.710000_45.240000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.700000_45.450000_29.710000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.7,
+      "max_lon": 29.71
+    }
+  },
+  {
+    "filename": "tile_45.430000_29.710000_45.440000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.43,
+      "max_lat": 45.44,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.350000_29.710000_45.360000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.35,
+      "max_lat": 45.36,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.460000_29.710000_45.470000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.46,
+      "max_lat": 45.47,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.710000_45.450000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.710000_45.460000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.710000_45.350000_29.720000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.71,
+      "max_lon": 29.72
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.720000_45.160000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.720000_45.460000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.230000_29.720000_45.240000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.460000_29.720000_45.470000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.46,
+      "max_lat": 45.47,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.720000_45.170000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.220000_29.720000_45.230000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.720000_45.450000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.720000_45.350000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.470000_29.720000_45.480000_29.730000.svg",
+    "coordinates": {
+      "min_lat": 45.47,
+      "max_lat": 45.480000000000004,
+      "min_lon": 29.72,
+      "max_lon": 29.73
+    }
+  },
+  {
+    "filename": "tile_45.230000_29.730000_45.240000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.230000000000004,
+      "max_lat": 45.24,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.220000_29.730000_45.230000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.22,
+      "max_lat": 45.230000000000004,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.330000_29.730000_45.340000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.730000_45.450000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.730000_45.460000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.730000_45.350000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.730000_45.160000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.160000_29.730000_45.170000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.160000000000004,
+      "max_lat": 45.17,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.470000_29.730000_45.480000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.47,
+      "max_lat": 45.480000000000004,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.480000_29.730000_45.490000_29.740000.svg",
+    "coordinates": {
+      "min_lat": 45.480000000000004,
+      "max_lat": 45.49,
+      "min_lon": 29.73,
+      "max_lon": 29.740000000000002
+    }
+  },
+  {
+    "filename": "tile_45.330000_29.740000_45.340000_29.750000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 29.740000000000002,
+      "max_lon": 29.75
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.740000_45.350000_29.750000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.740000000000002,
+      "max_lon": 29.75
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.740000_45.160000_29.750000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.740000000000002,
+      "max_lon": 29.75
+    }
+  },
+  {
+    "filename": "tile_45.440000_29.740000_45.450000_29.750000.svg",
+    "coordinates": {
+      "min_lat": 45.44,
+      "max_lat": 45.45,
+      "min_lon": 29.740000000000002,
+      "max_lon": 29.75
+    }
+  },
+  {
+    "filename": "tile_45.140000_29.750000_45.150000_29.760000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 29.75,
+      "max_lon": 29.76
+    }
+  },
+  {
+    "filename": "tile_45.480000_29.740000_45.490000_29.750000.svg",
+    "coordinates": {
+      "min_lat": 45.480000000000004,
+      "max_lat": 45.49,
+      "min_lon": 29.740000000000002,
+      "max_lon": 29.75
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.750000_45.160000_29.760000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.75,
+      "max_lon": 29.76
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.740000_45.460000_29.750000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.740000000000002,
+      "max_lon": 29.75
+    }
+  },
+  {
+    "filename": "tile_45.340000_29.750000_45.350000_29.760000.svg",
+    "coordinates": {
+      "min_lat": 45.34,
+      "max_lat": 45.35,
+      "min_lon": 29.75,
+      "max_lon": 29.76
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.750000_45.460000_29.760000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.75,
+      "max_lon": 29.76
+    }
+  },
+  {
+    "filename": "tile_45.330000_29.750000_45.340000_29.760000.svg",
+    "coordinates": {
+      "min_lat": 45.33,
+      "max_lat": 45.34,
+      "min_lon": 29.75,
+      "max_lon": 29.76
+    }
+  },
+  {
+    "filename": "tile_45.140000_29.760000_45.150000_29.770000.svg",
+    "coordinates": {
+      "min_lat": 45.14,
+      "max_lat": 45.15,
+      "min_lon": 29.76,
+      "max_lon": 29.77
+    }
+  },
+  {
+    "filename": "tile_45.150000_29.760000_45.160000_29.770000.svg",
+    "coordinates": {
+      "min_lat": 45.15,
+      "max_lat": 45.160000000000004,
+      "min_lon": 29.76,
+      "max_lon": 29.77
+    }
+  },
+  {
+    "filename": "tile_45.460000_29.760000_45.470000_29.770000.svg",
+    "coordinates": {
+      "min_lat": 45.46,
+      "max_lat": 45.47,
+      "min_lon": 29.76,
+      "max_lon": 29.77
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.760000_45.460000_29.770000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.76,
+      "max_lon": 29.77
+    }
+  },
+  {
+    "filename": "tile_45.450000_29.770000_45.460000_29.780000.svg",
+    "coordinates": {
+      "min_lat": 45.45,
+      "max_lat": 45.46,
+      "min_lon": 29.77,
+      "max_lon": 29.78
+    }
+  },
+  {
+    "filename": "tile_45.460000_29.770000_45.470000_29.780000.svg",
+    "coordinates": {
+      "min_lat": 45.46,
+      "max_lat": 45.47,
+      "min_lon": 29.77,
+      "max_lon": 29.78
+    }
+  }
+]

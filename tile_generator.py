@@ -3,6 +3,7 @@ import json
 from dataclasses import dataclass
 from math import ceil, floor
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Optional, Tuple, List, Dict, Any
 import matplotlib.pyplot as plt
 import numpy as np

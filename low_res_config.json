@@ -1,0 +1,20 @@
+{
+  "tile_size_deg": 0.01,
+  "overlap_factor": 0.1,
+  "resolution": 250,
+  "batch_size": 50,
+  "smoothing_sigma": 0.0,
+  "contour_max_depth": 39.0,
+  "contour_step": 1.0,
+  "fig_width": 8.0,
+  "fig_dpi": 0,
+  "tile_opacity": 0.9,
+  "contour_opacity": 0.0,
+  "use_custom_bounds": false,
+  "min_lat": null,
+  "max_lat": null,
+  "min_lon": null,
+  "max_lon": null,
+  "csv_file": "bathymetry_Danube.csv",
+  "output_dir": "bathymetry_tiles_low_res"
+}

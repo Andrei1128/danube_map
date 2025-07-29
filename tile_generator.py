@@ -3,7 +3,6 @@ import json
 from dataclasses import dataclass
 from math import ceil, floor
 from pathlib import Path
-from types import SimpleNamespace
 from typing import Optional, Tuple, List, Dict, Any
 import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend for thread safety
@@ -14,7 +13,6 @@ from scipy.interpolate import griddata
 from scipy.ndimage import binary_dilation, gaussian_filter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import multiprocessing as mp
-from functools import lru_cache
 from scipy.spatial import cKDTree
 
 @dataclass
@@ -32,6 +30,8 @@ class TilerConfig:
     fig_dpi: int = 100
     tile_opacity: float = 0.9
     contour_opacity: float = 0.9
+    enable_contours: bool = True
+    show_depth_labels: bool = True
 
     @property
     def overlap_size(self) -> float:
@@ -65,7 +65,7 @@ class DataLoader:
             # Build spatial index for faster queries
             self._build_spatial_index()
         return self._data
-    
+
     def _build_spatial_index(self) -> None:
         """Build spatial index for faster tile queries."""
         if self._data is not None and self._spatial_index is None:
@@ -76,7 +76,7 @@ class DataLoader:
         """Calculate data bounds and statistics."""
         if self._bounds is None:
             data = self._load_data()
-            
+
             self._bounds = DataBounds(
                 min_lat=data['lat'].min(),
                 max_lat=data['lat'].max(),
@@ -98,25 +98,25 @@ class DataLoader:
             # Create corners of bounding box
             bbox_corners = np.array([
                 [min_lon, min_lat],
-                [max_lon, min_lat], 
+                [max_lon, min_lat],
                 [max_lon, max_lat],
                 [min_lon, max_lat]
             ])
-            
+
             # Find all points within a reasonable distance of bbox
             center = np.array([(min_lon + max_lon) / 2, (min_lat + max_lat) / 2])
             diagonal = np.sqrt((max_lon - min_lon)**2 + (max_lat - min_lat)**2)
-            
+
             # Query spatial index
             indices = self._spatial_index.query_ball_point(center, diagonal)
             candidate_data = data.iloc[indices]
-            
+
             # Apply exact bounding box filter on candidates
             mask = (
                 (candidate_data['lon'] >= min_lon) & (candidate_data['lon'] < max_lon) &
                 (candidate_data['lat'] >= min_lat) & (candidate_data['lat'] < max_lat)
             )
-            
+
             return candidate_data[mask].copy()
         else:
             # For smaller datasets, use direct filtering
@@ -161,7 +161,7 @@ class BathymetryTiler:
 
         self.n_tiles_x = self.tile_max_x - self.tile_min_x
         self.n_tiles_y = self.tile_max_y - self.tile_min_y
-        
+
         # Set number of workers
         if self.config.n_workers is None:
             self.config.n_workers = min(mp.cpu_count(), 8)  # Cap at 8 to avoid memory issues
@@ -206,7 +206,7 @@ class BathymetryTiler:
         valid_indices = np.isfinite(values) & np.isfinite(points[:, 0]) & np.isfinite(points[:, 1])
         points = points[valid_indices]
         values = values[valid_indices]
-        
+
         if len(points) < 4:
             raise ValueError("Not enough valid points after filtering NaN/infinite values")
 
@@ -258,27 +258,31 @@ class BathymetryTiler:
 
         # Create contour plots
         contour_levels = np.arange(0, self.config.contour_max_depth, self.config.contour_step)
-        
+
         # Ensure we have valid contour levels
         if len(contour_levels) == 0:
             contour_levels = np.array([0, 10, 20, 30, 40])
-        
+
+        # Always create filled contours for the base bathymetry visualization
         ax.contourf(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
                    cmap='Blues', alpha=self.config.tile_opacity, corner_mask=False, extend='max')
 
-        cs_lines = ax.contour(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
-                             colors='black', linewidths=0.9, alpha=self.config.contour_opacity,
-                             corner_mask=False, antialiased=True)
+        # Conditionally create contour lines and labels
+        if self.config.enable_contours:
+            cs_lines = ax.contour(lon_mesh, lat_mesh, z_smoothed, levels=contour_levels,
+                                 colors='black', linewidths=0.9, alpha=self.config.contour_opacity,
+                                 corner_mask=False, antialiased=True)
 
-        # Only add labels if we have contour lines
-        try:
-            if hasattr(cs_lines, 'collections') and len(cs_lines.collections) > 0:
-                ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
-            elif hasattr(cs_lines, 'levels') and len(cs_lines.levels) > 0:
-                ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
-        except (AttributeError, ValueError):
-            # Skip labeling if there's an issue with contour lines
-            pass
+            # Only add labels if we have contour lines and depth labels are enabled
+            if self.config.show_depth_labels:
+                try:
+                    if hasattr(cs_lines, 'collections') and len(cs_lines.collections) > 0:
+                        ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
+                    elif hasattr(cs_lines, 'levels') and len(cs_lines.levels) > 0:
+                        ax.clabel(cs_lines, inline=True, fontsize=12, fmt='%d', colors='black')
+                except (AttributeError, ValueError):
+                    # Skip labeling if there's an issue with contour lines
+                    pass
 
         # Configure plot appearance
         ax.set_xlim(min_lon, max_lon)
@@ -287,14 +291,14 @@ class BathymetryTiler:
         ax.set_xticks([])
         ax.set_yticks([])
         ax.axis('off')
-        
+
         # Set transparent background
         fig.patch.set_alpha(0)
         ax.patch.set_alpha(0)
-        
+
         # Use subplots_adjust instead of tight_layout to avoid warnings
         fig.subplots_adjust(left=0, right=1, top=1, bottom=0, wspace=0, hspace=0)
-        
+
         # Cleanup coordinate grids
         del lon_grid, lat_grid, lon_mesh, lat_mesh
 
@@ -388,12 +392,12 @@ class BathymetryTiler:
             progress_callback(0, total_tiles, "Starting tile generation...")
 
         # Generate list of all tile coordinates
-        tile_coords = [(x, y) for x in range(self.tile_min_x, self.tile_max_x) 
+        tile_coords = [(x, y) for x in range(self.tile_min_x, self.tile_max_x)
                       for y in range(self.tile_min_y, self.tile_max_y)]
 
         if use_parallel and self.config.n_workers > 1:
             # Parallel generation
-            all_metadata = self._generate_tiles_parallel(tile_coords, resolution, 
+            all_metadata = self._generate_tiles_parallel(tile_coords, resolution,
                                                         progress_callback, should_stop_callback)
         else:
             # Sequential generation (original behavior)
@@ -431,25 +435,25 @@ class BathymetryTiler:
         all_metadata = []
         total_tiles = len(tile_coords)
         processed = 0
-        
+
         # Create batches to avoid memory issues
         batch_size = min(self.config.batch_size, len(tile_coords))
         batches = [tile_coords[i:i + batch_size] for i in range(0, len(tile_coords), batch_size)]
-        
+
         with ThreadPoolExecutor(max_workers=self.config.n_workers) as executor:
             for batch in batches:
                 if should_stop_callback and should_stop_callback():
                     break
-                    
+
                 # Submit batch for processing
-                future_to_coord = {executor.submit(self._create_tile_worker, coord[0], coord[1], resolution): coord 
+                future_to_coord = {executor.submit(self._create_tile_worker, coord[0], coord[1], resolution): coord
                                  for coord in batch}
-                
+
                 # Collect results
                 for future in as_completed(future_to_coord):
                     if should_stop_callback and should_stop_callback():
                         break
-                        
+
                     try:
                         tile_metadata = future.result()
                         if tile_metadata:
@@ -457,16 +461,16 @@ class BathymetryTiler:
                     except Exception as e:
                         coord = future_to_coord[future]
                         print(f"Error processing tile {coord}: {e}")
-                    
+
                     processed += 1
                     if progress_callback:
                         progress_callback(processed, total_tiles, f"Generated tile {processed}/{total_tiles}")
-                
+
                 # Force garbage collection after each batch
                 gc.collect()
-        
+
         return all_metadata
-    
+
     def _create_tile_worker(self, tile_x: int, tile_y: int, resolution: int) -> Optional[Dict[str, Any]]:
         """Worker function for parallel tile generation."""
         return self.create_tile_svg(tile_x, tile_y, resolution)

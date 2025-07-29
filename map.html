@@ -64,16 +64,17 @@
         const startCoords = [45.48964671659176, 28.453525086616327];
         const endCoords = [44.87774676946913, 29.779022798401925];
 
-        const minLat = Math.min(startCoords[0], endCoords[0]);
-        const maxLat = Math.max(startCoords[0], endCoords[0]);
-        const minLng = Math.min(startCoords[1], endCoords[1]);
-        const maxLng = Math.max(startCoords[1], endCoords[1]);
-
-        const centerCoords = [minLat + maxLat / 2, minLng + maxLng / 2,]
+        const bounds = {
+            minLat: Math.min(startCoords[0], endCoords[0]),
+            maxLat: Math.max(startCoords[0], endCoords[0]),
+            minLng: Math.min(startCoords[1], endCoords[1]),
+            maxLng: Math.max(startCoords[1], endCoords[1])
+        };
+        const centerCoords = [(bounds.minLat + bounds.maxLat) / 2, (bounds.minLng + bounds.maxLng) / 2]
 
         const map = L.map('map', {
             center: centerCoords,
-            maxBounds: [[minLat, minLng], [maxLat, maxLng]],
+            maxBounds: [[bounds.minLat, bounds.minLng], [bounds.maxLat, bounds.maxLng]],
             maxBoundsViscosity: 1,
             minZoom: 11,
             maxZoom: 18
@@ -109,10 +110,35 @@
         let markerColor = "#4285f4"
         let bathymetryLayer = null;
         let bathymetryEnabled = false;
-        let tilesMetadata = null;
+        let tilesMetadata = {
+            low: null,
+            mid: null,
+            high: null
+        };
+        let tileCache = new Map();
+        const MAX_CACHE_SIZE = 200;
+        let currentResolution = null;
+        let loadingSessionId = 0;
         let loadedTiles = new Set();
+        let tileOverlays = new Map();
+        let pendingImages = new Map();
+        let debounceTimer = null;
 
         const TILE_SIZE_DEG = 0.01;
+        const MIN_BATHYMETRY_ZOOM = 13;
+        const MAX_BATHYMETRY_ZOOM = 18;
+
+        // Resolution zoom ranges
+        const LOW_RES_ZOOM_RANGE = { min: 13, max: 14 };
+        const MID_RES_ZOOM_RANGE = { min: 15, max: 16 };
+        const HIGH_RES_ZOOM_RANGE = { min: 17, max: 18 };
+
+        function debounce(func, delay) {
+            return function (...args) {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => func.apply(this, args), delay);
+            };
+        }
 
         function latLngToTile(lat, lng) {
             const tileX = Math.floor(lng / TILE_SIZE_DEG);
@@ -128,12 +154,32 @@
             return [[minLat, minLng], [maxLat, maxLng]];
         }
 
+        function getResolutionForZoom(zoom) {
+            if (zoom >= LOW_RES_ZOOM_RANGE.min && zoom <= LOW_RES_ZOOM_RANGE.max) {
+                return 'low';
+            } else if (zoom >= MID_RES_ZOOM_RANGE.min && zoom <= MID_RES_ZOOM_RANGE.max) {
+                return 'mid';
+            } else if (zoom >= HIGH_RES_ZOOM_RANGE.min && zoom <= HIGH_RES_ZOOM_RANGE.max) {
+                return 'high';
+            }
+            return null;
+        }
+
+        function getResolutionFolder(resolution) {
+            switch (resolution) {
+                case 'low': return 'bathymetry_tiles_low_res';
+                case 'mid': return 'bathymetry_tiles_mid_res';
+                case 'high': return 'bathymetry_tiles_high_res';
+                default: return null;
+            }
+        }
+
         function fitToBounds() {
-            const bounds = L.latLngBounds([
-                [minLat, minLng],
-                [maxLat, maxLng]
+            const mapBounds = L.latLngBounds([
+                [bounds.minLat, bounds.minLng],
+                [bounds.maxLat, bounds.maxLng]
             ]);
-            map.fitBounds(bounds);
+            map.fitBounds(mapBounds);
         }
 
         function changeMapStyle() {
@@ -154,8 +200,13 @@
 
         function startGPS() {
             if (!navigator.geolocation) {
+                console.error('GPS is not supported by this browser.');
                 alert('GPS is not supported by this browser.');
                 return;
+            }
+
+            if (!navigator.onLine) {
+                console.warn('Device appears to be offline. GPS may not work properly.');
             }
 
             watchId = navigator.geolocation.watchPosition(
@@ -185,11 +236,8 @@
                             weight: 1
                         }).addTo(map);
 
-                        gpsMarker.bindPopup(`
-                            <div class="popup-title">📍 Your Location</div>
-                            <strong>Coordinates:</strong> ${lat.toFixed(6)}, ${lng.toFixed(6)}<br>
-                            <strong>Accuracy:</strong> ${accuracy.toFixed(0)}m
-                        `);
+                        const popupContent = `<div class="popup-title">📍 Your Location</div><strong>Coordinates:</strong> ${lat.toFixed(6)}, ${lng.toFixed(6)}<br><strong>Accuracy:</strong> ${accuracy.toFixed(0)}m`;
+                        gpsMarker.bindPopup(popupContent);
                     }
 
                     gpsEnabled = true;
@@ -199,13 +247,18 @@
                     switch (error.code) {
                         case error.PERMISSION_DENIED:
                             errorMessage = 'Location access denied by user.';
+                            console.error('GPS permission denied');
                             break;
                         case error.POSITION_UNAVAILABLE:
                             errorMessage = 'Location information unavailable.';
+                            console.error('GPS position unavailable');
                             break;
                         case error.TIMEOUT:
                             errorMessage = 'Location request timed out.';
+                            console.error('GPS request timeout');
                             break;
+                        default:
+                            console.error('Unknown GPS error:', error);
                     }
                     alert(errorMessage);
                 },
@@ -233,54 +286,180 @@
             gpsEnabled = false;
         }
 
-        async function loadTilesMetadata() {
-            try {
-                const response = await fetch('bathymetry_tiles_low_res/tiles_metadata.json');
-                tilesMetadata = await response.json();
-                console.log(`Loaded metadata for ${tilesMetadata.length} tiles`);
-            } catch (error) {
-                console.error('Failed to load tiles metadata:', error);
-                tilesMetadata = [];
+        async function loadTilesMetadata(resolution = null) {
+            const resolutions = resolution ? [resolution] : ['low', 'mid', 'high'];
+
+            for (const res of resolutions) {
+                if (tilesMetadata[res]) continue; // Skip if already loaded
+
+                try {
+                    const folder = getResolutionFolder(res);
+                    const response = await fetch(`${folder}/tiles_metadata.json`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+                    const data = await response.json();
+                    if (!Array.isArray(data)) {
+                        throw new Error('Invalid metadata format: expected array');
+                    }
+                    tilesMetadata[res] = data;
+                } catch (error) {
+                    console.warn(`Failed to load ${res} resolution metadata:`, error.message);
+                    tilesMetadata[res] = [];
+                }
             }
         }
 
         function toggleBathymetry() {
             if (bathymetryEnabled) {
+                bathymetryEnabled = false;
+                unloadAllBathymetryTiles();
                 if (bathymetryLayer) {
                     map.removeLayer(bathymetryLayer);
                     bathymetryLayer = null;
                 }
-                loadedTiles.clear();
-                bathymetryEnabled = false;
+                currentResolution = null;
             } else {
-                if (!tilesMetadata) {
-                    loadTilesMetadata().then(() => {
-                        loadBathymetryTiles();
-                        bathymetryEnabled = true;
-                    });
-                } else {
-                    loadBathymetryTiles();
-                    bathymetryEnabled = true;
-                }
+                bathymetryEnabled = true;
+                loadBathymetryTiles();
             }
         }
 
-        function loadBathymetryTiles() {
-            if (!tilesMetadata || tilesMetadata.length === 0) {
-                console.warn('No tiles metadata available');
-                return;
+        function unloadAllBathymetryTiles() {
+            const tileCount = tileOverlays.size;
+            const pendingCount = pendingImages.size;
+
+            // Remove all tile overlays from the layer
+            if (bathymetryLayer) {
+                tileOverlays.forEach((overlay, tileKey) => {
+                    bathymetryLayer.removeLayer(overlay);
+                });
             }
+            tileOverlays.clear();
+            loadedTiles.clear();
+
+            // Cancel and clean up pending image loads
+            pendingImages.forEach((img, tileKey) => {
+                img.onload = null;
+                img.onerror = null;
+                img.src = '';
+            });
+            pendingImages.clear();
+
+            // Increment session ID to cancel any pending tile loads
+            loadingSessionId++;
+        }
+
+        function unloadTilesOutsideViewport() {
+            if (!bathymetryEnabled || !bathymetryLayer || !currentResolution) return;
 
             const bounds = map.getBounds();
             const sw = bounds.getSouthWest();
             const ne = bounds.getNorthEast();
 
+            const tilesToUnload = [];
+
+            tileOverlays.forEach((overlay, tileKey) => {
+                // Check if tile belongs to current resolution
+                if (!tileKey.startsWith(`${currentResolution}_`)) {
+                    tilesToUnload.push(tileKey);
+                    return;
+                }
+
+                // Extract filename from resolution-prefixed key
+                const filename = tileKey.replace(`${currentResolution}_`, '');
+                const tile = tilesMetadata[currentResolution]?.find(t => t.filename === filename);
+                if (!tile) {
+                    tilesToUnload.push(tileKey);
+                    return;
+                }
+
+                const coords = tile.coordinates;
+                const isVisible = !(coords.max_lat < sw.lat ||
+                    coords.min_lat > ne.lat ||
+                    coords.max_lon < sw.lng ||
+                    coords.min_lon > ne.lng);
+
+                if (!isVisible) {
+                    tilesToUnload.push(tileKey);
+                }
+            });
+
+            tilesToUnload.forEach(tileKey => {
+                const overlay = tileOverlays.get(tileKey);
+                if (overlay) {
+                    bathymetryLayer.removeLayer(overlay);
+                    tileOverlays.delete(tileKey);
+                    loadedTiles.delete(tileKey);
+                }
+
+                // Clean up any pending image loads for this tile
+                const pendingImg = pendingImages.get(tileKey);
+                if (pendingImg) {
+                    pendingImg.onload = null;
+                    pendingImg.onerror = null;
+                    pendingImg.src = '';
+                    pendingImages.delete(tileKey);
+                }
+            });
+
+            if (tilesToUnload.length > 0) {
+            }
+        }
+
+        async function loadBathymetryTiles() {
+            const currentZoom = map.getZoom();
+            const requiredResolution = getResolutionForZoom(currentZoom);
+
+            // Check if zoom level is within bathymetry range
+            if (!requiredResolution) {
+                unloadAllBathymetryTiles();
+                currentResolution = null;
+                if (currentZoom < MIN_BATHYMETRY_ZOOM) {
+                } else {
+                }
+                return;
+            }
+
+            // Load metadata for required resolution if not loaded
+            if (!tilesMetadata[requiredResolution]) {
+                await loadTilesMetadata(requiredResolution);
+            }
+
+            if (!tilesMetadata[requiredResolution] || tilesMetadata[requiredResolution].length === 0) {
+                console.warn(`No tiles metadata available for ${requiredResolution} resolution`);
+                return;
+            }
+
+            // If resolution changed, unload all tiles and increment session ID
+            if (currentResolution !== requiredResolution) {
+                unloadAllBathymetryTiles();
+                currentResolution = requiredResolution;
+                loadingSessionId++;
+
+                // Recreate bathymetry layer to ensure clean state
+                if (bathymetryLayer) {
+                    map.removeLayer(bathymetryLayer);
+                }
+                bathymetryLayer = L.layerGroup().addTo(map);
+            }
+
+            const sessionId = loadingSessionId;
+
+            const bounds = map.getBounds();
+            const sw = bounds.getSouthWest();
+            const ne = bounds.getNorthEast();
+
+            // Ensure bathymetry layer exists
             if (!bathymetryLayer) {
                 bathymetryLayer = L.layerGroup().addTo(map);
             }
 
+            // Unload tiles outside viewport first
+            unloadTilesOutsideViewport();
+
             // Filter tiles that intersect with current view
-            const visibleTiles = tilesMetadata.filter(tile => {
+            const visibleTiles = tilesMetadata[requiredResolution].filter(tile => {
                 const coords = tile.coordinates;
                 return !(coords.max_lat < sw.lat ||
                     coords.min_lat > ne.lat ||
@@ -288,34 +467,89 @@
                     coords.min_lon > ne.lng);
             });
 
-            console.log(`Loading ${visibleTiles.length} tiles in view (out of ${tilesMetadata.length} total)`);
+            const folder = getResolutionFolder(requiredResolution);
 
             visibleTiles.forEach(tile => {
-                const tileKey = tile.filename;
+                const tileKey = `${requiredResolution}_${tile.filename}`;
 
                 // Skip if already loaded
                 if (loadedTiles.has(tileKey)) {
                     return;
                 }
 
+                // Check if tile is in cache
+                if (tileCache.has(tileKey)) {
+                    const cachedTile = tileCache.get(tileKey);
+                    if (bathymetryEnabled &&
+                        currentResolution === requiredResolution &&
+                        loadingSessionId === sessionId) {
+                        const overlay = L.imageOverlay(cachedTile.tilePath,
+                            [[cachedTile.coords.min_lat, cachedTile.coords.min_lon], [cachedTile.coords.max_lat, cachedTile.coords.max_lon]], {
+                            opacity: 0.7,
+                            interactive: false
+                        });
+                        bathymetryLayer.addLayer(overlay);
+                        tileOverlays.set(tileKey, overlay);
+                        loadedTiles.add(tileKey);
+                    }
+                    return;
+                }
+
                 const coords = tile.coordinates;
-                const tilePath = `bathymetry_tiles_low_res/${tile.filename}`;
+                const tilePath = `${folder}/${tile.filename}`;
 
                 const img = new Image();
+                pendingImages.set(tileKey, img);
+
                 img.onload = function () {
-                    if (bathymetryEnabled) { // Only add if bathymetry is still enabled
+                    // Remove from pending images
+                    pendingImages.delete(tileKey);
+
+                    // Cache the loaded image
+                    if (tileCache.size >= MAX_CACHE_SIZE) {
+                        const firstKey = tileCache.keys().next().value;
+                        tileCache.delete(firstKey);
+                    }
+                    tileCache.set(tileKey, { img: this, coords, tilePath });
+
+                    // Only add tile if session hasn't changed and bathymetry is still enabled
+                    if (bathymetryEnabled &&
+                        currentResolution === requiredResolution &&
+                        loadingSessionId === sessionId) {
                         const overlay = L.imageOverlay(tilePath,
                             [[coords.min_lat, coords.min_lon], [coords.max_lat, coords.max_lon]], {
                             opacity: 0.7,
                             interactive: false
                         });
                         bathymetryLayer.addLayer(overlay);
+                        tileOverlays.set(tileKey, overlay);
                         loadedTiles.add(tileKey);
+                    } else {
                     }
+
+                    // Clean up image references
+                    img.onload = null;
+                    img.onerror = null;
                 };
+
                 img.onerror = function () {
-                    console.log(`Tile not found: ${tilePath}`);
+                    console.warn(`Failed to load tile: ${tilePath}`);
+                    pendingImages.delete(tileKey);
+
+                    // Retry once after a delay
+                    setTimeout(() => {
+                        if (bathymetryEnabled && currentResolution === requiredResolution && loadingSessionId === sessionId) {
+                            const retryImg = new Image();
+                            retryImg.onload = img.onload;
+                            retryImg.onerror = () => console.error(`Tile load failed permanently: ${tilePath}`);
+                            retryImg.src = tilePath;
+                        }
+                    }, 1000);
+
+                    img.onload = null;
+                    img.onerror = null;
                 };
+
                 img.src = tilePath;
             });
         }
@@ -328,20 +562,26 @@
             imperial: false
         }).addTo(map);
 
-        // Add event listeners for dynamic tile loading
-        map.on('moveend zoomend', function () {
+        const debouncedTileLoad = debounce(function () {
             if (bathymetryEnabled) {
-                loadBathymetryTiles();
+                const currentZoom = map.getZoom();
+                if (currentZoom < MIN_BATHYMETRY_ZOOM || currentZoom > MAX_BATHYMETRY_ZOOM) {
+                    unloadAllBathymetryTiles();
+                    currentResolution = null;
+                } else {
+                    loadBathymetryTiles();
+                }
             }
-        });
+        }, 150);
+
+        // Add event listeners for dynamic tile loading
+        map.on('moveend zoomend', debouncedTileLoad);
 
         map.on('click', function (e) {
+            const clickPopupContent = `<div class="popup-title">📍 Clicked Location</div><strong>Coordinates:</strong> ${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}`;
             L.popup()
                 .setLatLng(e.latlng)
-                .setContent(`
-                    <div class="popup-title">📍 Clicked Location</div>
-                    <strong>Coordinates:</strong> ${e.latlng.lat.toFixed(6)}, ${e.latlng.lng.toFixed(6)}
-                `)
+                .setContent(clickPopupContent)
                 .openOn(map);
         });
     </script>

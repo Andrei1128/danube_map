@@ -62,7 +62,7 @@ class TileMetadataGeneratorGUI:
         log_frame = ttk.LabelFrame(main_frame, text="Log", padding="10")
         log_frame.grid(row=3, column=0, sticky=(tk.W, tk.E, tk.N, tk.S))
 
-        self.log_text = tk.Text(log_frame, height=15, wrap=tk.WORD)
+        self.log_text = tk.Text(log_frame, height=15, wrap=tk.WORD, state='disabled')
         scrollbar = ttk.Scrollbar(log_frame, orient=tk.VERTICAL, command=self.log_text.yview)
         self.log_text.configure(yscrollcommand=scrollbar.set)
 
@@ -94,8 +94,10 @@ class TileMetadataGeneratorGUI:
             self.output_file.set(filename)
 
     def log_message(self, message):
+        self.log_text.configure(state='normal')
         self.log_text.insert(tk.END, f"{message}\n")
         self.log_text.see(tk.END)
+        self.log_text.configure(state='disabled')
         self.root.update_idletasks()
 
     def progress_callback(self, current, total, message):
@@ -120,6 +122,21 @@ class TileMetadataGeneratorGUI:
             self.log_message("Stopping generation...")
             self.progress_var.set("Stopping generation...")
             self.stop_btn.configure(state='disabled')
+
+    def _get_output_path(self):
+        """Get the resolved output file path."""
+        output_file = self.output_file.get()
+        if os.path.isabs(output_file):
+            return Path(output_file)
+        else:
+            return Path(self.tiles_dir.get()) / output_file
+
+    def _save_metadata(self, coordinates_data):
+        """Save metadata to file."""
+        output_path = self._get_output_path()
+        with open(output_path, 'w') as f:
+            json.dump(coordinates_data, f, indent=2)
+        return output_path
 
     def extract_coordinates_from_filename(self, filename):
         """
@@ -174,7 +191,6 @@ class TileMetadataGeneratorGUI:
     def generate_metadata(self):
         try:
             tiles_dir = self.tiles_dir.get()
-            output_file = self.output_file.get()
 
             self.log_message(f"Scanning directory: {tiles_dir}")
 
@@ -215,36 +231,20 @@ class TileMetadataGeneratorGUI:
                 processed += 1
                 self.progress_callback(processed, total_files, f"Processed {processed}/{total_files} files")
 
-            # Save metadata if we have data and weren't stopped
-            if coordinates_data and not self.stop_generation:
-                # Determine output path
-                if os.path.isabs(output_file):
-                    output_path = Path(output_file)
+            # Save metadata if we have data
+            if coordinates_data:
+                output_path = self._save_metadata(coordinates_data)
+                
+                if not self.stop_generation:
+                    self.log_message(f"Successfully extracted coordinates from {len(coordinates_data)} SVG files")
+                    self.log_message(f"Output saved to: {output_path}")
+                    self.progress_var.set(f"Completed - Generated metadata for {len(coordinates_data)} files")
                 else:
-                    output_path = Path(tiles_dir) / output_file
-
-                with open(output_path, 'w') as f:
-                    json.dump(coordinates_data, f, indent=2)
-
-                self.log_message(f"Successfully extracted coordinates from {len(coordinates_data)} SVG files")
-                self.log_message(f"Output saved to: {output_path}")
-                self.progress_var.set(f"Completed - Generated metadata for {len(coordinates_data)} files")
-            elif self.stop_generation:
-                # Save partial results if stopped
-                if coordinates_data:
-                    if os.path.isabs(output_file):
-                        output_path = Path(output_file)
-                    else:
-                        output_path = Path(tiles_dir) / output_file
-
-                    with open(output_path, 'w') as f:
-                        json.dump(coordinates_data, f, indent=2)
-
                     self.log_message(f"Generation stopped - Saved metadata for {len(coordinates_data)} files")
                     self.progress_var.set(f"Stopped - Generated metadata for {len(coordinates_data)} files")
-                else:
-                    self.log_message("Generation stopped - No files processed")
-                    self.progress_var.set("Stopped - No files processed")
+            elif self.stop_generation:
+                self.log_message("Generation stopped - No files processed")
+                self.progress_var.set("Stopped - No files processed")
 
         except Exception as e:
             self.log_message(f"Error: {str(e)}")

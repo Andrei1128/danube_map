@@ -212,19 +212,7 @@ class BathymetryTiler:
 
         z_grid = griddata(points, values, (lon_mesh, lat_mesh), method='linear')
 
-        # Fill small gaps using conservative approach
-        nan_mask = np.isnan(z_grid)
-        if np.any(nan_mask) and np.any(~nan_mask):
-            valid_mask = ~nan_mask
-            expanded_valid = binary_dilation(valid_mask, iterations=2)
-            fill_mask = nan_mask & expanded_valid
-
-            if np.any(fill_mask):
-                z_grid_nearest = griddata(points, values, (lon_mesh, lat_mesh), method='nearest')
-                z_grid[fill_mask] = z_grid_nearest[fill_mask]
-                del z_grid_nearest  # Immediate cleanup
-
-        # Replace any remaining NaN values with 0 (water surface)
+        # Replace NaN values with 0 (water surface)
         z_grid = np.nan_to_num(z_grid, nan=0.0, posinf=0.0, neginf=0.0)
 
         # Cleanup input arrays

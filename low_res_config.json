@@ -2,7 +2,7 @@
   "tile_size_deg": 0.01,
   "overlap_factor": 0.1,
   "resolution": 250,
-  "batch_size": 50,
+  "batch_size": 100,
   "smoothing_sigma": 0.1,
   "contour_max_depth": 39.0,
   "contour_step": 1.0,

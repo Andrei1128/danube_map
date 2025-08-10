@@ -329,6 +329,11 @@ class BathymetryTiler:
             z_grid_overlap = self._interpolate_bathymetry(tile_data, lon_mesh_overlap, lat_mesh_overlap)
             z_smoothed = self._smooth_and_crop(z_grid_overlap, resolution_lon, resolution_lat)
 
+            # Skip tiles that contain only negative bathymetry values (underwater areas)
+            z_max = np.max(z_smoothed)
+            if z_max <= 0:
+                return None
+
             # Create plot
             fig = self._create_plot(z_smoothed, min_lon, max_lon, min_lat, max_lat, lon_correction)
 
@@ -452,7 +457,7 @@ class BathymetryTiler:
 
                     processed += 1
                     if progress_callback:
-                        progress_callback(processed, total_tiles, f"Generated tile {processed}/{total_tiles}")
+                        progress_callback(processed, total_tiles, f"{processed}/{total_tiles}")
 
                 # Force garbage collection after each batch
                 gc.collect()

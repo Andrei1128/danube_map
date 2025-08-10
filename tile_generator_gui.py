@@ -571,7 +571,7 @@ class TileGeneratorGUI:
         def update_progress():
             percentage = (current / total) * 100 if total > 0 else 0
             self.progress_bar['value'] = percentage
-            self.progress_var.set(f"{message} ({percentage:.1f}%)")
+            self.progress_var.set(f"Processed tile {message} ({percentage:.1f}%)")
             self.root.update_idletasks()
 
         # Schedule the update on the main thread
